@@ -1,0 +1,67 @@
+@import url('../../../plug_in/mcustomscrollbar/jquery.mCustomScrollbar.css');
+@import url('place_modal.css');
+
+.place_find_container{position:relative}
+.place_find_wrap{position:absolute;left:15%;top:15px;z-index:10;width:70%;font-size:0;text-align:center}
+.place_find_wrap > .cols{display:inline-block;vertical-align:top}
+.place_find_wrap > .cols.select{width:160px;margin-right:10px}
+.place_find_wrap > .cols.select > button{width:100%;height:48px;padding-left:50px;border:1px solid #ebebeb;border-radius:4px;background:#fff url('../img/select_ico.png') no-repeat 20px 18px;font-size:1em;line-height:48px;letter-spacing:-0.05em;text-align:left;box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3);box-sizing:border-box}
+.local_list_wrap{display:none;overflow:hidden;position:relative;height:248px}
+.local_select{position:relative;width:100%;border:1px solid #ebebeb;background-color:#fff;box-shadow:2px 2px 4px rgba(0, 0, 0, 0.3);box-sizing:border-box}
+.local_select > li > a{display:block;height:30px;padding-left:30px;font-size:0.875em;color:#7d7b7c;line-height:30px;letter-spacing:-0.05em;text-align:left}
+.local_select > li.on a, .local_select > li > a:hover{background-color:#f8f8f8}
+.place_find_wrap > .cols.input{width:280px}
+.placefindbyname{position:relative;height:48px;border:1px solid #ebebeb;border-radius:4px;background-color:#fff;font-size:15px;letter-spacing:-0.05em;color:#2b2a28;box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3);box-sizing:border-box}
+.placefindbyname:after{content:'';display:block;clear:both;position:absolute;top:16px;right:60px;width:1px;height:14px;background-color:#ddd}
+.placefindbyname label{display:block;position:absolute;left:16px;top:0;font-size:1em;line-height:48px}
+.place_name{float:left;width:218px;height:46px;padding:16px 15px 15px;border:0;box-sizing:border-box}
+.place_btn{float:left;position:relative;width:59px;height:46px;margin-left:1px;border:0;font-size:0;background:url('../img/find_ico.png') no-repeat}
+.geo_locator{display:none;position:absolute;right:10px;bottom:20px;z-index:10;width:40px;height:40px;background:url('../img/btn_location.jpg') no-repeat;background-size:cover;border-radius:2px;box-shadow:rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;transition:box-shadow .2s;outline:none}
+.geo_locator:hover{box-shadow:rgba(0, 0, 0, 0.6) 0px 1px 6px -1px}
+#placeLoadMap{width:100%;height:630px}
+
+/* list */
+.store_ul{overflow:hidden;width:1180px;margin:0 auto}
+.store_li{position:relative;overflow:hidden;float:left;width:530px;height:452px;margin:60px 30px 0}
+.store_ul li:hover .store_border{display:block}
+.store_img{overflow:hidden;width:100%;height:287px}
+.store_list_txt{overflow:hidden;position:relative;width:100%;height:165px;padding:30px 0 0 37px;background:#fff;box-sizing:border-box}
+.store_tit{margin-bottom:20px;font-size:24px;color:#333;letter-spacing:-0.025em}
+.store_txt{font-size:15px;color:#777;letter-spacing:-0.025em}
+.store_txt span{display: inline-block;width: 350px;}
+.store_txt > em{display:inline-block;width:94px;padding-left:27px;box-sizing:border-box}
+.store_list_ico01{background:url('../img/store_list_ico01.png') no-repeat 0 0}
+.store_list_ico02{background:url('../img/store_list_ico02.png') no-repeat 0 0}
+.store_more{display:block;position:absolute;top:30px;right:35px;width:61px;height:22px;background:url('../img/store_more.png') no-repeat 0 0;font-size:0;line-height:0}
+.drawborder{position:absolute;background:#444;z-index:2}
+.drawborder-top, .drawborder-bottom{width:0;height:10px}
+.drawborder-right , .drawborder-left{width:10px;height:0}
+.drawborder-top{top:0;left:0}
+.drawborder-right{top:0;right:0}
+.drawborder-bottom{right:0;bottom:0}
+.drawborder-left{left:0;bottom:0}
+
+/* view */
+.store_view_video{width:1080px;margin-top:50px;background:#5c5c5c}
+.store_info_wrap{position:relative;width:100%;margin-top:50px}
+.store_info_wrap:after{display:block;content:"";clear:both}
+.store_info_left{width:508px}
+.store_tab_wrap{width:100%;margin:0 auto}
+.store_tabmenu{position:relative}
+.store_tabmenu:after{display:block;clear:both;content:""}
+.store_tabmenu > li{float:left;width:254px;height:50px}
+.store_tabmenu > li:first-child{margin-left:0}
+.store_tabmenu > li > a{display:block;width:100%;font-size:16px;color:#777;text-align:center;line-height:50px;letter-spacing:0.01em;background:#fff}
+.store_tabmenu > li.on > a, .store_tabmenu > li > a:hover{background:#333;color:#fff}
+.store_map01{width:508px;height:400px}
+.store_info_right{width:503px}
+.store_info_tit{margin-top:5px;font-size:26px;letter-spacing:-0.025em;color:#333}
+.store_line{display:inline-block;width:100%;height:1px;background:#d9d9d9;margin-top:15px}
+.store_info_ul{margin-top:62px}
+.store_info_ul li{min-height:72px;padding-left:95px;margin-top:55px}
+.store_info_ul li:first-child{margin-top:0}
+.store_info1{background: url('../img/store_info1.png') no-repeat 0 0}
+.store_info2{background: url('../img/store_info2.png') no-repeat 0 0}
+.store_info3{background: url('../img/store_info3.png') no-repeat 0 0}
+.store_info_txt01{margin-top:10px;font-size:20px;letter-spacing:-0.05em;color:#333}
+.store_info_txt02{margin-top:10px;font-size:16px;letter-spacing:-0.025em;color:#777}

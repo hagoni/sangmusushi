@@ -1,0 +1,10 @@
+.board_list{border-top-width:1px;border-top-style:solid;border-bottom-width:1px;border-bottom-style:solid}
+.board_list > li{padding:0;border-bottom:none}
+.faq_list dt{position:relative;height:20px;padding:8px 45px 8px 34px;border-bottom-width:1px;border-style:dashed}
+.faq_list:last-child dt{border-bottom:none}
+.faq_list dt:before{content:'Q';position:absolute;left:10px;top:8px;width:18px;height:18px;border-radius:100%;background-color:#bdbdbd;font-weight:700;font-size:0.625em;line-height:18px;color:#fff;text-align:center}
+.faq_list.on dt:before{background-color:#e7235a}
+.faq_list dt > a{display:block;height:100%;line-height:20px}
+.faq_list dd{display:none;position:relative;padding:15px 40px 15px 45px;border-bottom-width:1px;border-style:dashed;background-color:#f9f9f9}
+.faq_list dd:before{content:'A';position:absolute;left:20px;top:15px;width:18px;height:18px;border-radius:100%;background-color:#343434;font-weight:700;font-size:0.625em;line-height:18px;color:#fff;text-align:center}
+.faq_list dd p{line-height:inherit}

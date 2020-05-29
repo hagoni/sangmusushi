@@ -1,0 +1,59 @@
+<?
+@include_once('../inc/top.php');
+?>
+        <!-- layer1 start -->
+        <div class="layer1 first_layer chapters">
+            <div class="inner">
+                <div class="pattern"></div>
+                <div class="lyr1_video">
+                    <iframe src="//player.vimeo.com/video/398445321?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <div class="img_title abs"><img src="<?=$root?>/img/page/fran/lyr1_ttl.png" alt="" class="w100"></div>
+            </div>
+            <div class="lyr1_ttl t_center">
+                <p class="stitle2">운영방식</p>
+            </div>
+            <p class="text t_center">
+                상무초밥은 본사와 가맹점주가 협업하여<br>
+                운영하는 방식입니다. 인력관리, 식자재, 매체 광고 등은<br>
+                본사가 담당하며, 매장 운영은 점주가 하게 됩니다.<br>
+                따라서 에스앤피프렌차이즈와 가맹점이<br>
+                공동투자 운영방식으로 입점할 수 있습니다.
+            </p>
+            <div class="lyr1_ttl t_center">
+                <p class="stitle2">입점상담</p>
+            </div>
+            <p class="text t_center">
+                에스앤피프렌차이즈는 국내 최고 초밥브랜드로서 <br>
+                여러분의 자산가치를 극대화해드릴 것을 확신하며, <br>
+                저희 에스앤피프렌차이즈와 비즈니스 파트너로 <br>
+                함께 하고 싶으신 분은 아래 신청서를 작성해주시면<br>
+                개설 담당자가 상세하게 검토한 후에 <br>
+                회신 드리도록 하겠습니다.
+            </p>
+        </div>
+        <!-- //layer1 end -->
+        <div class="inquiry rel">
+            <p class="lyrtitle t_center">가족점 신청</p>
+<?
+$path_action = view3_link("||idx||page||select||search||skin","action&skin=root","",$end_path);//등록 클릭시 링크
+$board = 'inquiry_01';
+$view3_sca = '1n1_01';
+$view3_skin = 'view3_inquiry_00';
+$h2_title_sub = '가맹상담';
+$no_include = true;
+include(BOARD_INC.'/index.php');
+?>
+            <div class="inq_temp"><img src="<?=$root?>/img/page/fran/inq_temp.png" alt="" class="w100">
+        </div>
+        <script>
+            $('.bindInquirySubmit').click(function (e) {
+                alert('가맹문의기간이 아닙니다');
+                e.preventDefault();
+            });
+        </script>
+        <script src="<?=$root?>/js/fran.js?<?=$time?>"></script>
+
+<?
+@include_once('../inc/bottom.php');
+?>

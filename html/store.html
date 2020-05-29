@@ -1,0 +1,197 @@
+<?php
+include_once('../inc/top.php');
+?>
+<link rel="stylesheet" href="<?=$root?>/board/view3_map_00/css/skin.css">
+        <!-- store_visual start -->
+        <div class="store_visual chapters" data-motion-offset="1">
+            <div class="box_wrap rel m_nav fs_def">
+                <img src="<?=$root?>/img/page/store/1-fitsize.png" alt="" class="w100">
+                <div class="box1 box rel">
+                    <div class="box_bg box_bg1"></div>
+                </div>
+                <div class="box2 box rel t_right">
+                    <div class="box_bg box_bg2"></div>
+                </div>
+                <p class="visual_ttl1"><img src="<?=$root?>/img/page/store/visual_ttl1.png" alt="매장에서 맛본 그대로"></p>
+                <p class="visual_ttl2"><img src="<?=$root?>/img/page/store/visual_ttl2.png" alt="고스란히 전하다"></p>
+                <p class="stitle">본연의 가치를 잃지 않는<br>무결의 Delivery Service.</p>
+            </div>
+        </div>
+        <!-- //store_visual end -->
+        <!-- layer1 start -->
+        <div class="layer1 rel" data-motion-offset="2">
+            <ul class="lyr1_imgs rel">
+                <li><img src="<?=$root?>/img/page/store/2-1.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-2.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-3.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-4.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-5.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-6.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-7.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-8.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-9.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-10.png" alt=""></li>
+                <li><img src="<?=$root?>/img/page/store/2-11.png" alt=""></li>
+            </ul>
+            <p class="lyr1_num l50"><img src="<?=$root?>/img/page/store/lyr1_num.png" alt="특허번호"></p>
+            <p class="lyr1_han1 l50"><img src="<?=$root?>/img/page/store/lyr1_han1.png" alt=""></p>
+            <p class="lyr1_han2 l50"><img src="<?=$root?>/img/page/store/lyr1_han2.png" alt=""></p>
+            <div class="lyr1_cir1 l50"></div>
+            <div class="lyr1_cir2 l50"></div>
+            <ul class="lyr1_list fs_def t_center">
+                <li class="fs_def">
+                    <div class="list_ttl"><img src="<?=$root?>/img/page/store/lyr1_littl1.png" alt="최초의 시도"></div>
+                    <p class="list_text"><img src="<?=$root?>/img/page/store/lyr1_litext1.png" alt=""></p>
+                </li>
+                <li class="fs_def">
+                    <div class="list_ttl"><img src="<?=$root?>/img/page/store/lyr1_littl2.png" alt="전문화된 시스템"></div>
+                    <p class="list_text"><img src="<?=$root?>/img/page/store/lyr1_litext2.png" alt=""></p>
+                </li>
+                <li class="fs_def">
+                    <div class="list_ttl"><img src="<?=$root?>/img/page/store/lyr1_littl3.png" alt="최상의 만족"></div>
+                    <p class="list_text"><img src="<?=$root?>/img/page/store/lyr1_litext3.png" alt=""></p>
+                </li>
+            </ul>
+        </div>
+        <!-- //layer1 end -->
+        <!-- store start -->
+        <div class="store chapters">
+            <div class="store_near m_nav over_h">
+                <div class="store_in bg over_h">
+                    <div class="near_tb">
+                        <p class="store_logo"><img src="<?=$root?>/img/page/store/store_near_logo_20200320.png" alt=""></p>
+                        <div class="text_wrap">
+                            <p class="title geo_tlt"><span>상무초밥 매장안내</span></p>
+                            <p class="text geo_con">더 가까이에서 상무초밥을 만나실 수 있도록 최선을 다하겠습니다.</p>
+                        </div>
+                    </div>
+                    <div class="ns clearfix">
+                        <p class="ns_ttl f_left"><img src="<?=$root?>/img/main/ns_ttl.png" alt="오픈준비중"></p>
+                        <ul class="fs_def f_left">
+                            <li>천안신불당점<br>여수해양공원점</li>
+                            <li>울산점<br>부산점</li>
+							<li>창원점</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+<?
+$board = "map_01";
+$view3_loc = $_REQUEST['loc'];
+if ($view3_loc == "") {
+    $loc_sql = "";
+} else {
+    $loc_sql = "and view3_addr_road regexp '{$view3_loc}'";
+}
+$map_sql = "select * from ".TABLE_LEFT."map_01 where view3_use = 1 {$loc_sql} order by view3_order desc, view3_write_day desc";
+$map_res = mysql_query($map_sql);
+?>
+<script type="text/javascript">
+<?
+$markerImgPath = '/design/other/marker.png';
+$markerImgSize = getImagesize(ROOT_INC.$markerImgPath);
+?>
+
+var marker = {
+	src: '<?=$pc.$markerImgPath?>',
+	offset: {x: <?=$markerImgSize[0] / 2?>, y: <?=$markerImgSize[1]?>},
+	size: {x: <?=$markerImgSize[0]?>, y: <?=$markerImgSize[1]?>}
+};
+
+var placeInfo = [];
+</script>
+            <ul class="tabmenu fs_def t_center">
+                <li <?if ($view3_loc == "") {echo 'class="on"';}?>><a href="#none" data-value="">모든매장</a></li>
+                <li <?if ($view3_loc == "서울") {echo 'class="on"';}?>><a href="#none" data-value="서울">서울(<span>0</span>)</a></li>
+                <li <?if ($view3_loc == "인천") {echo 'class="on"';}?>><a href="#none" data-value="인천">인천(<span>0</span>)</a></li>
+                <li <?if ($view3_loc == "경기") {echo 'class="on"';}?>><a href="#none" data-value="경기">경기(<span>0</span>)</a></li>
+                <li <?if ($view3_loc == "전북|전남|광주") {echo 'class="on"';}?>><a href="#none" data-value="전북|전남|광주">전북/전남(<span>0</span>)</a></li>
+                <li <?if ($view3_loc == "충북|충남|대전") {echo 'class="on"';}?>><a href="#none" data-value="충북|충남|대전">충북/충남(<span>0</span>)</a></li>
+                <li <?if ($view3_loc == "경북|경남|대구|울산|부산") {echo 'class="on"';}?>><a href="#none" data-value="경북|경남|대구|울산|부산">경북/경남(<span>0</span>)</a></li>
+            </ul>
+            <div class="tab_conts store_conts">
+                <div class="tab_cont">
+                    <ul class="store_list fs_def m_nav" id="store_list">
+<?
+while ($map_lst = mysql_fetch_assoc($map_res)) {
+?>
+                        <li>
+                            <div class="map_wrap rel">
+                                <div class="map" id="roughMap<?=$map_lst['view3_idx']?>"></div>
+                            </div>
+                            <a href="<?=BOARD?>/index.php?board=<?=$board?>&type=view&idx=<?=$map_lst['view3_idx']?>&skin=map_00&modal=1" class="bindContentsModalOpen2" data-notice-idx="<?=$list['view3_idx']?>">
+                                <div class="text_area rel">
+                                    <p class="store_name ellipsis"><?=$map_lst['view3_title_01']?></p>
+                                    <p class="store_add ellipsis text"><?=$map_lst['view3_addr_road']." ".$map_lst['view3_addr_detail']?></p>
+                                    <p class="store_tel ellipsis text"><?=$map_lst['view3_special_04']?></p>
+                                    <? /*
+                                    <a href="https://baeminkr.onelink.me/XgL8/baemincom" target="_blank" class="store_dlvr">배달주문</a>
+                                    */ ?>
+                                </div>
+                            </a>
+                            <script type="text/javascript">
+                                placeInfo.push({
+                                    appkey: '<?=$settings_data['kakao_api_key'];?>',
+                                    container: 'roughMap<?=$map_lst['view3_idx']?>',
+                                    geocode: {lat: '<?=$map_lst['view3_addr_y']?>', lng: '<?=$map_lst['view3_addr_x']?>'},
+                                    scrollwheel: false,
+                                    marker: marker
+                                });
+                            </script>
+                        </li>
+<?
+}
+?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<script type="text/javascript" src="<?=$root;?>/freebest/xcross.php?http://view3.net/_outline/kakaomap.js"></script>
+<script>
+$(document).ready(function(){
+
+    var requestUrl = '<?=BOARD?>/view3_map_00/resource' + '/place_check.php';
+
+    $('body .tabmenu li').each(function(){
+		var _this = $(this);
+		var a_tag = $(this).find('a');
+		var value = a_tag.data('value');
+
+		var data = {board: 'map_01', sca : 'all', select : 'addr_road||addr_number', search: value};
+		$.post(requestUrl,data,function(res){
+			var len = $(res)[0].data.length;
+            console.log(res);
+			_this.find('span').html(len);
+		});
+	});
+
+    $('.tabmenu li').click(function(){
+        var allTag = $('.tabmenu li');
+        var _this = $(this);
+        var aTag = _this.find('a');
+
+        if (!_this.hasClass('on')) {
+            allTag.removeClass('on');
+            _this.addClass('on');
+
+            $.post(aTag.href,{loc:aTag.data('value')},function(res){
+                $('body').html(res);
+            });
+        }
+    });
+});
+
+
+
+</script>
+<script src="<?=$root?>/js/YMotion.js?<?=$time?>"></script>
+<script src="<?=$root?>/js/ContentsModal.js?<?=$time?>"></script>
+<script src="<?=$root?>/js/store.js?<?=$time?>"></script>
+
+<?php
+// @include_once(ROOT_INC.'/inc/geolocation.php');
+include_once('../inc/bottom.php');
+?>

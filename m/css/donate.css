@@ -1,0 +1,16 @@
+/* layer1 */
+.layer1{}
+.layer1 .lyr1_box{display:table;height:90.625vw;background-image:url('../img/page/donate/lyr1_bg.jpg')}
+.layer1 .lyr1_box .v_mid{display:table-cell;vertical-align:middle}
+.layer1 .lyr1_box .lyrtitle{color:#fff}
+.layer1 .lyr1_box .text2{padding:3.75vw 0 3.125vw;color:#fff;line-height:154%}
+.layer1 .lyr1_box .text{color:#fff}
+.layer1 .lyr1_box .lyr1_logo{position:absolute;bottom:7.8125vw;right:7.8125vw}
+
+/* donate */
+.donate{padding:10.9375vw 0 18.75vw}
+.donate_list li{width:43.75vw;margin-right:3.125vw}
+.donate_list li:nth-child(2n){margin-right:0}
+.donate_list .list_img{width:100%;height:28.125vw}
+.donate_list .list_ttl{padding:2.5vw 0 6.875vw;font-family:'NotoSansKR-Medium';font-size:3.75vw;letter-spacing:0.05em;line-height:154%;color:#2d2d2d}
+.more_view{display:inline-block;width:18.75vw;border-bottom:0.46875vw solid #c08f6f;font-family:'NotoSerifKR-Medium';font-size:4.6875vw;letter-spacing:0.15em;line-height:213%;color:#2d2d2d}

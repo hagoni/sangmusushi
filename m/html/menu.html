@@ -1,0 +1,267 @@
+<?
+@include_once('../inc/top.php');
+?>
+        <!-- layer1 -->
+        <div class="layer1 first_layer chapters">
+            <div class="lyr1_bg bg"></div>
+        </div>
+        <!-- layer1 -->
+        <div class="layer2">
+            <div class="inner">
+                <div class="lyr2_box bg bg1">
+                    <div class="lyr2_slide">
+                        <div class="swiper-container h100">
+                            <ul class="swiper-wrapper h100">
+                                <li class="swiper-slide sl1"></li>
+                                <li class="swiper-slide sl2"></li>
+                                <li class="swiper-slide sl3"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="stitle2 t_center rel">
+                        밥이<br>
+                        맛있는 초밥집
+                    </p>
+                    <p class="text t_center rel">
+                        전남 해남군 옥천면에서 계약재배된<br>
+                        '한눈에 반한 쌀' 사용
+                    </p>
+                </div>
+                <div class="lyr2_box bg bg2">
+                    <div class="pattern abs"></div>
+                    <div class="lyr2_video1 abs">
+                        <iframe src="//player.vimeo.com/video/394883491?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <p class="stitle2 t_center rel">
+                        名品<br>
+                        마이산 김치
+                    </p>
+                    <p class="text t_center rel">
+                        청정지역의 고랭지 채소와 <br>
+                        100% 우리 농산물 농협과 계약
+                    </p>
+                </div>
+                <div class="lyr2_box bg bg3">
+                    <div class="lyr2_video2 abs">
+                        <iframe src="//player.vimeo.com/video/398445408?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&muted=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <p class="stitle2 t_center rel">
+                        믿고<br>
+                        드셔도 됩니다
+                    </p>
+                    <p class="text t_center rel">
+                        상무초밥은 가장 건강한 원재료를<br>
+                        선별하여 사용하며 고객님이 보시는 앞에서<br>
+                        조리하고 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="layer3 chapters" id="menu">
+            <p class="lyrtitle t_center">
+                제대로된 쉐프의<br>
+                제대로 만든 초밥을<br>
+                즐기다.
+            </p>
+<?
+$board = "menu_01";
+$view3_sca = $_REQUEST['sca'];
+if ($view3_sca == 1 || $view3_sca == "") {
+    $sca_sql = "";
+} else {
+    $sca_sql = "and view3_sca = {$view3_sca}";
+}
+?>
+            <div class="t_center">
+                <div class="tab_wrap">
+                    <ul class="menu_tab">
+                        <li <?if ($view3_sca == 1 || $view3_sca == "") {echo 'class="on"';}?>><a href="#none" data-sca="1">전체메뉴</a></li>
+                        <li <?if ($view3_sca == 2) {echo 'class="on"';}?>><a href="#none" data-sca="2">세트메뉴</a></li>
+                        <li <?if ($view3_sca == 3) {echo 'class="on"';}?>><a href="#none" data-sca="3">단품메뉴</a></li>
+                        <li <?if ($view3_sca == 4) {echo 'class="on"';}?>><a href="#none" data-sca="4">선택초밥</a></li>
+                        <!-- <li <?if ($view3_sca == 5) {echo 'class="on"';}?>><a href="#none" data-sca="5">인기메뉴</a></li> -->
+                        <li <?if ($view3_sca == 6) {echo 'class="on"';}?>><a href="#none" data-sca="6">사시미 / 참치</a></li>
+                        <li <?if ($view3_sca == 7) {echo 'class="on"';}?>><a href="#none" data-sca="7">구이 / 기타</a></li>
+                        <li <?if ($view3_sca == 8) {echo 'class="on"';}?>><a href="#none" data-sca="8">주류</a></li>
+                    </ul>
+                    <a href="#none" class="tab_a">전체메뉴</a>
+                </div>
+            </div>
+            <div class="tab_conts menu_conts">
+<?
+$tab_sql = "select * from ".TABLE_LEFT."board where view3_use = 1 and view3_group_admin_idx = 17 {$sca_sql} order by view3_order_admin";
+$tab_res = mysql_query($tab_sql);
+while ($tab_lst = mysql_fetch_assoc($tab_res)) {
+    $menu_sql = "select * from ".TABLE_LEFT."menu_01 where view3_use = 1 and view3_sca = {$tab_lst['view3_sca']} order by view3_order desc, view3_write_day desc";
+    $menu_res = mysql_query($menu_sql);
+    $menu_num = mysql_num_rows($menu_res);
+    if ($menu_num) {
+        ?>
+            <div class="tab_cont tab_cont01">
+                <p class="tab_name stitle2 t_center"><?=$tab_lst['view3_title_01']?></p>
+                <ul class="menu_list fs_def">
+                <?
+                $menu_i = 0;
+                while ($menu_lst = mysql_fetch_assoc($menu_res)) {
+                    $menu_img = explode("||",$menu_lst['view3_file']);
+                    $img = "";
+                    if ($menu_img[0] == "" && $menu_img[1] == "") {
+                        $img = $request_root."/design/noimg/menu_01.jpg";
+                    } else {
+                        if ($menu_img[0] != "") {
+                            $img = $request_root."/upload/menu_01".$menu_img[0];
+                        } else {
+                            $img = $request_root."/upload/menu_01".$menu_img[1];
+                        }
+                    }
+                    $menu_class = "bindMenuModalOpen";
+                    if ($menu_lst['view3_sca'] == 8) {
+                        $menu_class = "";
+                    }
+                ?>
+                    <li>
+                        <a href="#none" class="<?=$menu_class?>" data-sca="<?=$menu_lst['view3_sca']?>" data-idx="<?=$menu_i?>">
+                            <div class="menu_img bg" style="background-image:url('<?=$img?>')"></div>
+                            <p class="menu_name t_right ellipsis"><?=$menu_lst['view3_title_01']?></p>
+                        </a>
+                    </li>
+                <?
+                $menu_i++;
+                }
+                ?>
+                </ul>
+            </div>
+        <?
+    }
+}
+?>
+            </div>
+        </div>
+        <!-- pick start -->
+        <div class="pick1 pick t_center chapters">
+            <div class="inner">
+                <p class="title">상무초밥<br>픽업 서비스</p>
+                <div class="text_box">
+                    <p class="pick_text">
+                        차에서 내리실 필요 없이<br>
+                        주차 걱정도 없이<br>
+                        고객님의 차로 직접 가져다드리겠습니다.<br><br>
+
+                        픽업하실 매장에 전화로 주문하시고<br>
+                        내 차에서 편하게 받으세요.
+                    </p>
+                    <a href="<?=$root?>/html/store.html#2">상무초밥 매장안내</a>
+                </div>
+                <img src="<?=$root?>/img/page/menu/pick_img1.jpg" alt="" class="w100">
+                <ul>
+                    <li>
+                        <p class="li_ttl">이용안내</p>
+                        <p class="li_text text">
+                            1.&nbsp;&nbsp;픽업 하실 매장 전화로 주문<br>
+                            2.&nbsp;&nbsp;픽업시간 요청<br>
+                            3.&nbsp;&nbsp;주문매장 도착 시 매장전화<br>
+                            4.&nbsp;&nbsp;고객님 차에서 바로결제
+                        </p>
+                    </li>
+                    <li>
+                        <p class="li_ttl">유의사항</p>
+                        <p class="li_text text">
+                            &middot;&nbsp;&nbsp;안전하고 신속한 서비스를 위해 픽업시간에 맞춰<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;매장에 도착하여 매장으로 전화 주시면<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;고객님의 차량으로 배송해 드립니다.<br>
+                            &middot;&nbsp;&nbsp;도로 건너편에 계실 경우, 전달이 어렵습니다.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pick2 pick t_center chapters">
+            <div class="inner">
+                <p class="title">상무초밥<br>단체주문 서비스</p>
+                <div class="text_box">
+                    <p class="pick_text">
+                        다양한 행사, 모임, 파티, 이벤트 등 <br>
+                        소중한 사람들과 함께 누리는 즐거움을 위해<br>
+                        상무초밥을 다량으로 주문하고 싶으시다면<br><br>
+
+                        배달받으실 위치와 가까운 매장에 전화하셔서 <br>
+                        단체주문 서비스를 이용하세요.
+                    </p>
+                    <a href="<?=$root?>/html/store.html#2">상무초밥 매장안내</a>
+                </div>
+                <img src="<?=$root?>/img/page/menu/pick_img2.jpg" alt="" class="w100">
+                <ul>
+                    <li>
+                        <p class="li_ttl">이용안내</p>
+                        <p class="li_text text">
+                            &middot;&nbsp;&nbsp;30인분 이상 주문 시 이용해 주세요.<br>
+                            &middot;&nbsp;&nbsp;단체 주문 이용은 각 매장에 전화로 주문해 주세요.<br>
+                            &middot;&nbsp;&nbsp;최소 2~3일 전 주문 신청 필수입니다.<br>
+                            &middot;&nbsp;&nbsp;전 매장 이용 가능합니다.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="li_ttl">배달지원</p>
+                        <p class="li_text text">
+                            고객님께서 원하시는 날짜 및 시간에 맞춰 <br>
+                            최상의 상태로 원하시는 곳으로 배달해드립니다.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //pick end -->
+<!-- menu_popup start -->
+<?
+if($_POST['modal']) {
+?>
+<div id="menuModalPopupParent">
+    <div id="menuModalPopup" class="menu_pop pv-container">
+    	<div class="pv-aligner">
+    		<div class="pv-async-data swiper-container">
+    			 <ul class="swiper-wrapper">
+<?
+$menu_board = 'menu_01';
+ $menu_sql_query = 'SELECT * FROM `'.TABLE_LEFT.'menu_01` WHERE `view3_use`="1" AND `view3_sca`="'.$_POST['sca'].'" ORDER BY view3_order desc, view3_write_day desc;';
+ $menu_result = mysql_query($menu_sql_query);
+ $menu_count = mysql_num_rows($menu_result);
+ if($menu_count > 0) {
+    while($menu_list = mysql_fetch_assoc($menu_result)) {
+
+        $menu_file_array = explode('||', $menu_list['view3_file']);
+
+        if ($menu_file_array[2] == "") {
+            $menu_img = $pc."/design/noimg/menu_01.jpg";
+        } else {
+            $menu_img = $pc.'/upload/'.$menu_board.$menu_file_array[2];
+        }
+
+        $menu_txt = $pc.'/upload/'.$menu_board.$menu_file_array[3];
+?>
+    				<li class="swiper-slide">
+    					<div class="pv-body">
+    						<div class="pv-img" style="background-image:url('<?=$menu_img?>')"></div>
+    						<p class="pv-title ellipsis"><?=$menu_list['view3_title_01']?></p>
+    						<p class="pv-desc"><?=nl2br($menu_list['view3_command_01'])?></p>
+    					</div>
+    				</li>
+<?
+    }
+}
+?>
+    			</ul>
+    		</div>
+    	</div>
+    	<button type="button" class="pv-btns pv-prev"><img src="<?=$root?>/img/page/menu/modal_prev.png" alt="이전" class="w100"></button>
+    	<button type="button" class="pv-btns pv-next"><img src="<?=$root?>/img/page/menu/modal_next.png" alt="다음" class="w100"></button>
+    	<button type="button" class="pv-closer menu_pop_close"><img src="<?=$root?>/img/page/menu/modal_x.jpg" alt="닫기" class="w100"></button>
+    </div>
+</div>
+<?
+}
+?>
+<!-- menu_popup end -->
+<script src="<?=$root?>/js/menu.js?<?=$time?>"></script>
+<?
+@include_once('../inc/bottom.php');
+?>

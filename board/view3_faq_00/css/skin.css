@@ -1,0 +1,13 @@
+.board_list{border-top:1px solid #b4b3af;border-bottom:1px solid #b4b3af}
+.board_list > li{padding:0;border-bottom:0}
+.faq_list dt{position:relative;height:70px;border-bottom:1px dashed #dbdbdb}
+.faq_list dt:before{content:'';position:absolute;left:20px;top:15px;width:40px;height:40px;background-image:url('../img/icon_q.png');background-repeat:no-repeat;background-position:0 0}
+.faq_list dt:after{content:'';position:absolute;right:20px;top:50%;width:20px;height:11px;margin-top:-5px;background-repeat:no-repeat;background-image:url('../img/icon_arrow.png');background-position:0 0}
+.faq_list.on dt:before{background-position:0 -40px}
+.faq_list.on dt:after{background-position:0 -11px}
+.faq_list dt a{display:block;margin-left:75px;line-height:70px;color:#1f1e1e}
+.faq_list dd{display:none;position:relative;padding:45px 100px 50px 110px;border-bottom:1px dashed #dbdbdb;background:#f9f9f9;font-size:15px;color:#747474;line-height:185%;letter-spacing:-0.075em}
+.faq_list dd:before{content:'';position:absolute;left:55px;top:40px;width:40px;height:40px;background-image:url('../img/icon_a.png')}
+.faq_list dd p{line-height:inherit}
+.board_list > li:last-child dt, .board_list > li:last-child dd{border-bottom:0}
+.board_list > li:last-child dd{border-top:1px dashed #dbdbdb}

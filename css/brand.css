@@ -1,0 +1,129 @@
+.brand_visual{height:1090px}
+.brand_visual .visual_img1{top:30px;margin-left:-917px}
+.brand_visual .visual_img2{top:275px;margin-left:252px}
+.brand_visual .visual_img3{top:767px;margin-left:-704px}
+.brand_visual .visual_text{top:498px;margin-left:-82px}
+.brand_visual .title{position:absolute;top:331px;left:0;width:100%}
+
+.layer1 .v_mid{position:absolute;top:50%;width:100%;z-index:10;
+-webkit-transform:translateY(-50%);
+transform:translateY(-50%);
+}
+.layer1 .lyr1_ttl{padding:22px 0 19px;font-family:'NotoSerifKR-Medium';font-size:40px;letter-spacing:0.05em;color:#fff}
+.layer1 .lyr1_text{font-size:17px;line-height:176%;letter-spacing:0.05em;color:#fff}
+.layer1 .lyr1_video{width:100%;padding-top:50%;background-image:url('../img/page/brand/lyr1_video.jpg')}
+.layer1 .lyr1_slide{width:100%;height:1000px}
+.lyr1_slide .swiper-container{width:100%;height:100%}
+.lyr1_slide .swiper-slide{width:100%;height:100%}
+.lyr1_slide .bg1{background-image:url('../img/page/brand/lyr1_sl1.jpg')}
+.lyr1_slide .bg2{background-image:url('../img/page/brand/lyr1_sl2.jpg')}
+.lyr1_slide .bg3{background-image:url('../img/page/brand/lyr1_sl3.jpg')}
+.lyr1_slide .bg4{background-image:url('../img/page/brand/lyr1_sl4.jpg')}
+.lyr1_slide .bg5{background-image:url('../img/page/brand/lyr1_sl5.jpg')}
+.lyr1_slide .bg6{background-image:url('../img/page/brand/lyr1_sl6.jpg')}
+
+.layer2 .title{padding:140px 0 12px}
+.layer2 .stitle{padding-bottom:47px}
+.layer2 .box_wrap > div .lyr2_video{transition:all 0.5s ease}
+.layer2 .box_wrap > div:hover .lyr2_video{transform:scale(1.05)}
+.layer2 .box_wrap .lyr2_box1{width:50%}
+.layer2 .box_wrap .lyr2_box2{width:100%}
+.layer2 .box_wrap .lyr2_video1{width:100%;padding-top:83.25%;background-image:url('../img/page/brand/lyr2_box1.jpg')}
+.layer2 .box_wrap .lyr2_video2{width:100%;padding-top:83.25%;background-image:url('../img/page/brand/lyr2_box2.jpg')}
+.layer2 .box_wrap .lyr2_video3{width:100%;padding-top:41.625%;background-image:url('../img/page/brand/lyr2_box3.jpg')}
+.layer2 .box_wrap .text_wrap{position:absolute;top:0;left:0;width:100%;height:100%}
+.layer2 .box_wrap .lyr2_box1 .text_wrap{padding-left:70px;box-sizing:border-box}
+.layer2 .box_wrap .lyr2_box2 .box_ttl{padding:160px 0 12px}
+.layer2 .box_wrap .box_ttl{font-family:'NotoSerifKR-Medium';font-size:35px;line-height:157%;letter-spacing:0.05em;color:#2d2d2d}
+.layer2 .box_wrap .lyr2_box1 .box_ttl{padding:60px 0 22px}
+.layer2 .box_wrap .lyr2_box2 .stitle{position:absolute;bottom:43px;left:0;width:100%}
+.layer2 .box_wrap .text{color:#2d2d2d}
+.layer2 .box_wrap .co2{color:#fff}
+.layer2 .bot_ttl{padding:30px 0 42px;font-family:'NotoSerifKR-Medium';font-size:40px;line-height:150%;letter-spacing:0.05em;color:#2d2d2d}
+
+.layer3{padding-top:96px}
+.layer3 .line{position:absolute;top:0;left:50%;width:1px;height:96px;background:#a79471}
+.layer3 .m_nav{height:700px;border:10px solid #000;box-sizing:border-box}
+.layer3 .box{display:table;height:100%;margin:0 auto}
+.layer3 .text_wrap{display:table-cell;vertical-align:middle}
+.layer3 .lyr3_list{padding-top:43px;padding-right:296px}
+.layer3 .lyr3_list li{line-height:220%}
+.layer3 .lyr3_logo{position:absolute;top:143px;left:-108px}
+.layer3 .lyr3_line{bottom:0;margin-left:162px}
+
+.layer4{height:1480px}
+.layer4 .lyr4_img1{top:150px;margin-left:-700px}
+.layer4 .lyr4_img2{top:465px;margin-left:50px}
+.layer4 .lyr4_img3{top:850px;margin-left:-480px}
+.layer4 .text_wrap1{top:140px;margin-left:100px}
+.layer4 .text_wrap2{top:983px;width:800px;margin-left:-800px;padding-right:550px;box-sizing:border-box}
+.layer4 .text_wrap3{top:1250px;margin-left:100px}
+.layer4 .stitle{padding-bottom:28px;line-height:180%}
+.layer4 .lyr4_link{position:relative;display:inline-block;padding:0 10px;font-size:17px;line-height:235%;letter-spacing:0.05em;color:#2d2d2d}
+.layer4 .lyr4_link:before{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:#c08f6f}
+.layer4 .line{position:absolute;top:0;left:50%;width:1px;height:100%;background:#a79471}
+@media screen and (max-width: 1700px) {
+    .layer4{height:1730px}
+    .layer4 .lyr4_img3{top:1100px}
+    .layer4 .text_wrap2{top:850px;padding-right:70px}
+}
+
+.layer5{padding-bottom:150px}
+.layer5 .lyr5_nav{height:700px;background-image:url('../img/page/brand/lyr5_bg.jpg')}
+.layer5 .lyr5_text1{top:150px;margin-left:-504px}
+.layer5 .lyr5_text2{top:152px;margin-left:-438px}
+.layer5 .lyr5_icon{top:480px;margin-left:-542px}
+.layer5 .lyr5_icon li{margin-left:20px}
+.layer5 .lyr5_icon li:first-child{margin-left:0}
+.layer5 .lyr5_slide{top:150px;margin-left:-200px;width:400px;height:400px}
+.lyr5_slide .bg{width:400px;height:400px}
+.lyr5_slide .lyr5_btns{position:absolute;top:50%;margin-top:-40px;width:80px;height:80px;background:no-repeat center;font-size:0}
+.lyr5_slide .lyr5_prev{left:-80px;background-image:url('../img/page/brand/lyr5_prev.png')}
+.lyr5_slide .lyr5_next{right:-80px;background-image:url('../img/page/brand/lyr5_next.png')}
+.lyr5_dlvr{height:300px;background-color:#2ac1bc;box-sizing:border-box}
+.lyr5_dlvr .dlvr_top{height:220px;line-height:220px;border-bottom:1px solid rgba(255,255,255,0.4)}
+.lyr5_dlvr .dlvr_bot{height:79px;line-height:79px}
+
+.layer6 .lyr6_slide{width:100%;height:50%}
+/* .layer6 .lyr6_slide .lyr6_def img.eq0{
+-webkit-transform-origin: 34% 46.8%;
+transform-origin: 34% 46.8%;
+}
+.layer6 .lyr6_slide .lyr6_def img.eq1{
+-webkit-transform-origin: 50% 50%;
+transform-origin: 50% 50%;
+}
+.layer6 .lyr6_slide .lyr6_def img.eq2{
+-webkit-transform-origin: 62% 43.8%;
+transform-origin: 62% 43.8%;
+}
+.layer6 .lyr6_slide .lyr6_def img.eq3{
+-webkit-transform-origin: 80% 34.6%;
+transform-origin: 80% 34.6%;
+} */
+.layer6 .lyr6_ttl{top:50%;margin-left:-73px;z-index:10;
+-webkit-transform:translateY(-50%);
+transform:translateY(-50%);
+}
+.layer6 .lyr6_imgs{position:absolute;left:0;top:0;width:100%}
+.layer6 .lyr6_imgs li{opacity:0;position:absolute;left:0;top:0;width:100%}
+.layer6 .lyr6_imgs li.on{opacity:1}
+.lyr6_slide .lyr6_paging{position:absolute;bottom:70px;left:0;width:100%}
+.lyr6_paging a{display:block;position:relative;width:300px;border-bottom:1px solid rgb(186,186,186,0.3);box-sizing:border-box}
+.lyr6_paging li.on a:before, .lyr6_paging li a:hover:before{content:'';position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:#c08f6f}
+.lyr6_paging .text{color:#fff}
+.lyr6_paging .stitle{padding-bottom:18px;color:#fff}
+
+.layer7{padding:150px 0}
+.layer7 .inner{padding-left:180px;box-sizing:border-box}
+.layer7 .lyr7_ttl{position:absolute;top:0;left:0}
+.layer7 .lyr7_slide{}
+.lyr7_slide .swiper-slide .bg1{width:1020px;height:650px}
+.lyr7_slide .lyr7_btns{position:absolute;top:50%;margin-top:-40px;width:80px;height:80px;background:no-repeat center;font-size:0}
+.lyr7_slide .lyr7_prev{left:0;background-image:url('../img/page/brand/lyr5_prev.png')}
+.lyr7_slide .lyr7_next{right:0;background-image:url('../img/page/brand/lyr5_next.png')}
+.layer7 .lyr7_paging{position:absolute;bottom:0;left:0;font-family:'NotoSerifKR-Medium';font-size:25px;letter-spacing:0.15em;color:#2d2d2d}
+
+.layer8{border-top:1px solid rgba(0,0,0,0.1)}
+.layer8 .lyr8_img{padding:150px 0}
+.layer8 .lyr8_ttl{position:absolute;top:150px;right:2px}

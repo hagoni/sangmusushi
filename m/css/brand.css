@@ -1,0 +1,88 @@
+.sub_content > .first_layer{padding-top:28.125vw}
+.layer1 .lyr1_bg{height:121.875vw;box-sizing:border-box;background-image:url('../img/page/brand/lyr1_bg.jpg')}
+.layer1 .lyrtitle{padding-top:26.25vw;color:#2d2d2d}
+
+.layer2 .lyr2_slide{width:100%;height:137.5vw}
+.layer2 .lyr2_slide .swiper-slide{height:137.5vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.layer2 .lyr2_slide .swiper-slide.sl1{background-image:url('../img/main/mv_sl1.jpg')}
+.layer2 .lyr2_slide .swiper-slide.sl2{background-image:url('../img/main/mv_sl2.jpg')}
+.layer2 .lyr2_slide .swiper-slide.sl3{background-image:url('../img/main/mv_sl3.jpg')}
+.layer2 .lyr2_slide .swiper-slide.sl4{background-image:url('../img/main/mv_sl4.jpg')}
+.layer2 .lyr2_slide .swiper-slide.sl5{background-image:url('../img/main/mv_sl5.jpg')}
+.layer2 .lyr2_slide .swiper-slide.sl6{background-image:url('../img/main/mv_sl6.jpg')}
+.layer2 .lyr2_con{position:absolute;top:50%;left:0;width:100%;text-align:center;
+-webkit-transform:translateY(-50%);
+transform:translateY(-50%);
+}
+.layer2 .lyr2_logo{padding-bottom:2.1875vw}
+.layer2 .title2{line-height:175%;color:#fff}
+.layer2 .text{color:#fff}
+
+.layer3 .lyrtitle{padding:17.5vw 0 1.25vw;letter-spacing:0.15em}
+.layer3 .text2{padding-bottom:5.625vw}
+.layer3 .lyr3_box{height:90.625vw}
+.layer3 .lyr3_box.bg1{background-image:url('../img/page/brand/lyr3_bg1.jpg')}
+.layer3 .lyr3_box.bg2{background-image:url('../img/page/brand/lyr3_bg2.jpg')}
+.layer3 .lyr3_box.bg3{background-image:url('../img/page/brand/lyr3_bg3.jpg')}
+.layer3 .lyr3_box .stitle2{padding:9.375vw 0 2.5vw}
+.layer3 .lyr3_box .t_white{color:#fff}
+.layer3 .lyr3_box .text_bot{padding-top:47vw}
+.layer3 .lyr3_bot{padding:9.375vw 0 3.125vw}
+
+.layer4 .inner{padding-top:10.9375vw}
+.layer4 .inner:before{content:'';position:absolute;top:0;left:50%;width:1px;height:10.9375vw;background-color:#a79471}
+
+.layer5 .inner{padding:15.625vw 0}
+.layer5 .inner:before{content:'';position:absolute;top:0;left:50%;width:1px;height:100%;background:#a79471}
+.layer5 .lyr5_tb{display:table;width:100%}
+.layer5 .lyr5_tb > div{display:table-cell;vertical-align:middle;width:50%;box-sizing:border-box}
+.layer5 .lyr5_tb.tb1 .text_wrap{padding-left:5.3125vw}
+.layer5 .lyr5_tb.tb2 .text_wrap{padding-right:5.625vw}
+.layer5 .lyr5_tb.tb2 .img_wrap{padding-left:3.125vw}
+.layer5 .lyr5_tb.tb3 .text_wrap{padding-left:5.625vw}
+.layer5 .text2{line-height:177%}
+.layer5 .lyr5_link{position:relative;display:inline-block;margin-top:3.125vw;padding:0 1.5625vw;font-size:3.4375vw;letter-spacing:0.05em;line-height:227%;color:#2d2d2d}
+.layer5 .lyr5_link:before{content:'';position:absolute;bottom:0;left:0;width:100%;height:0.625vw;background:#c08f6f}
+
+.layer6{padding-bottom:15.625vw}
+.layer6 .lyr6_box1{height:121.875vw;background-image:url('../img/page/brand/lyr6_bg1.jpg')}
+.layer6 .lyr6_box2{height:35.46875vw;background-image:url('../img/page/brand/lyr6_bg2.jpg')}
+.layer6 .text2{padding:8.75vw 0 0;color:#fff}
+.layer6 .title2{padding-bottom:6.25vw;color:#fff}
+.layer6 .lyr6_slide{margin-bottom:7.8125vw}
+.lyr6_slide .swiper-container{width:59.375vw}
+.lyr6_slide .swiper-slide a{display:block;width:100%;height:59.375vw}
+.lyr6_slide .lyr6_btns{position:absolute;top:50%;margin-top:-6.25vw;width:12.5vw;height:12.5vw;background:no-repeat center;background-size:cover;font-size:0}
+.lyr6_slide .lyr6_prev{left:3.125vw;background-image:url('../img/page/brand/lyr6_prev.png')}
+.lyr6_slide .lyr6_next{right:3.125vw;background-image:url('../img/page/brand/lyr6_next.png')}
+.lyr6_list li{width:10.9375vw;margin-left:3.125vw}
+.lyr6_list li:first-child{margin-left:0}
+
+.layer7 .lyr7_img{position:absolute;left:50%;top:28.125vw;margin-left:-10.3125vw;width:20.9375vw}
+.lyr7_slide{height:125vw}
+.lyr7_slide .swiper-slide .bg{width:100%;height:125vw;background:no-repeat center;background-size:cover}
+.lyr7_slide .swiper-slide .bg1{background-image:url('../img/page/brand/lyr7_slbg1.jpg')}
+.lyr7_slide .swiper-slide .bg2{background-image:url('../img/page/brand/lyr7_slbg2.jpg')}
+.lyr7_slide .swiper-slide .bg3{background-image:url('../img/page/brand/lyr7_slbg3.jpg')}
+.lyr7_slide .swiper-slide .bg4{background-image:url('../img/page/brand/lyr7_slbg4.jpg')}
+.lyr7_slide .swiper-slide .bg5{background-image:url('../img/page/brand/lyr7_slbg5.jpg')}
+.lyr7_thumb{position:absolute;bottom:0;left:0;width:100%;padding-bottom:15.625vw;overflow:hidden}
+.lyr7_thumb .swiper-container{overflow:visible;border-bottom:1px solid rgba(186,186,186,0.3);box-sizing:border-box}
+.lyr7_thumb .swiper-slide{opacity:0.3;position:relative;width:46.875vw}
+.lyr7_thumb .swiper-slide-active{opacity:1}
+.lyr7_thumb .swiper-slide-active:before{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:3px;background:#c08f6f}
+.lyr7_thumb .text{color:#fff}
+.lyr7_thumb .stitle2{padding:0 0 3.125vw;color:#fff}
+
+.layer8{border-bottom:1px solid rgba(0,0,0,0.1)}
+.layer8 .lyrtitle{padding:17.5vw 0 1.25vw;letter-spacing:0.15em}
+.layer8 .text2{padding-bottom:5.625vw}
+.lyr8_slide .swiper-slide .bg{height:57.8125vw}
+.lyr8_slide .lyr8_btns{position:absolute;top:50%;margin-top:-6.25vw;width:12.5vw;height:12.5vw;background:no-repeat center;background-size:cover;font-size:0}
+.lyr8_slide .lyr8_prev{left:0vw;background-image:url('../img/page/brand/lyr6_prev.png')}
+.lyr8_slide .lyr8_next{right:0vw;background-image:url('../img/page/brand/lyr6_next.png')}
+.layer8 .lyr8_paging{padding:5.625vw 0 13.125vw;font-family:'NotoSerifKR-Medium';font-size:3.75vw;letter-spacing:0.15em;line-height:220%;color:#2d2d2d}
+
+.layer9{padding-bottom:15.625vw}
+.layer9 .lyrtitle{padding:17.5vw 0 1.25vw;letter-spacing:0.15em}
+.layer9 .text2{padding-bottom:5.625vw}

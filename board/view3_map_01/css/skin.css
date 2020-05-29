@@ -1,0 +1,90 @@
+.place_find_container{position:relative}
+.place_find_wrap{position:absolute;left:15%;top:15px;z-index:10;width:70%;font-size:0;text-align:center}
+.place_find_wrap > .cols{display:inline-block;vertical-align:top}
+.place_find_wrap > .cols.select{width:160px;margin-right:10px}
+.place_find_wrap > .cols.select > button{width:100%;height:48px;padding-left:50px;border:1px solid #ebebeb;border-radius:4px;background:#fff url('../img/select_ico.png') no-repeat 20px 18px;font-size:1em;line-height:48px;letter-spacing:-0.05em;text-align:left;box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3);
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+.local_list_wrap{display:none;overflow:hidden;position:relative;height:248px}
+.local_select{position:relative;width:100%;border:1px solid #ebebeb;background-color:#fff;box-shadow:2px 2px 4px rgba(0, 0, 0, 0.3);
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+.local_select > li > a{display:block;height:30px;padding-left:30px;font-size:0.875em;color:#7d7b7c;line-height:30px;letter-spacing:-0.05em;text-align:left}
+.local_select > li.on a, .local_select > li > a:hover{background-color:#f8f8f8}
+.place_find_wrap > .cols.input{width:280px}
+.placefindbyname{position:relative;height:48px;border:1px solid #ebebeb;border-radius:4px;background-color:#fff;font-size:15px;letter-spacing:-0.05em;color:#2b2a28;box-shadow:3px 3px 5px rgba(0, 0, 0, 0.3);
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+.placefindbyname:after{content:'';display:block;clear:both;position:absolute;top:16px;right:60px;width:1px;height:14px;background-color:#ddd}
+.placefindbyname label{display:block;position:absolute;left:16px;top:0;font-size:1em;line-height:48px}
+.place_name{float:left;width:218px;height:46px;padding:16px 15px 15px;border:0;
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+.place_btn{float:left;position:relative;width:59px;height:46px;margin-left:1px;border:0;font-size:0;background:url('../img/find_ico.png') no-repeat}
+#placeLoadMap{width:100%;height:630px}
+
+.place_modal{overflow:hidden;position:relative;width:226px}
+.place_title{position:relative;width:220px;height:34px;margin:1px 0 0 2px;padding-left:10px;border-bottom:1px solid #ebebeb;font-weight:700;font-size:14px;line-height:34px;letter-spacing:-0.05em}
+.place_cont{position:relative;margin:1px 0 0 2px;width:220px;padding:5px 10px;
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+.place_addr{font-size:14px;color:#888;line-height:150%;letter-spacing:-0.05em}
+.more_btn_wrap{display:block;position:relative;width:100px;height:24px;margin:5px auto 0;border-radius:4px;background-color:#2b2a28;line-height:24px;letter-spacing:-0.05em;font-size:14px;color:#fff;text-align:center}
+
+.board_list_thumb{float:left;width:28%}
+.board_list_thumb img{width:100%}
+.board_list_text{float:left;width:70%;margin-left:2%}
+.board_list_text > p, .board_list_text > dl{margin-right:132px}
+.board_list_title{padding-bottom:5px}
+.board_list_desc{margin-top:0}
+.board_list_desc:after{content:'';display:block;clear:both}
+.board_list_desc dt{float:left;margin:10px 10px 0 0;color:#953735}
+.board_list_desc dd{float:left;margin-top:10px}
+.board_list_more{top:50%;width:112px;height:112px;margin-top:-70px;background-image:url('../../../design/other/store_more.png');background-repeat:no-repeat;background-position:0 0;text-align:left;text-indent:-10000px}
+.board_list_more:hover{background-position:0 -112px}
+
+.store_view_img{position:relative;margin-top:30px}
+.store_view_img > .slider-btns{position:absolute;top:50%;width:60px;height:60px;margin-top:-30px;background-repeat:no-repeat;text-indent:-10000px}
+.store_view_img > .slider-prev{left:30px;background-image:url('../img/btn_prev.png')}
+.store_view_img > .slider-next{right:30px;background-image:url('../img/btn_next.png')}
+.store_view_info{position:relative;margin:30px 0}
+.store_info_list{position:relative}
+.store_info_list:after{content:'';display:block;clear:both}
+.store_info_li{float:left;position:relative;width:50%;min-height:120px;margin-bottom:50px}
+.store_info_ico{position:absolute;left:0;top:0;width:120px;height:120px;background-repeat:no-repeat}
+.store_info_ico01{background-image:url('../img/store_info_ico01.png')}
+.store_info_ico02{background-image:url('../img/store_info_ico02.png')}
+.store_info_ico03{background-image:url('../img/store_info_ico03.png')}
+.store_info_ico04{background-image:url('../img/store_info_ico04.png')}
+.store_info_txt_area{margin:0 20px 0 150px;padding-top:30px}
+.service_ico_area:after{content:'';display:block;clear:both}
+.service_ico{float:left;width:24px;height:24px;margin-left:10px;background-repeat:no-repeat;text-indent:-10000px}
+.service_ico:first-child{margin-left:0}
+.service_ico01{background-image:url('../img/service_ico01.png')}
+.service_ico02{background-image:url('../img/service_ico02.png')}
+.service_ico03{background-image:url('../img/service_ico03.png')}
+.service_ico04{background-image:url('../img/service_ico04.png')}
+.service_ico05{background-image:url('../img/service_ico05.png')}
+.store_view_tabmenu{position:relative}
+.store_view_tabmenu:after{content:'';display:block;clear:both}
+.store_view_tabmenu > li{position:relative;float:left;width:50%}
+.store_view_tabmenu > li > a{display:block;position:relative;width:100%;height:60px;background-color:#e2e2e2;font-size:1em;line-height:60px;letter-spacing:-0.05em;color:#7d7b7c;text-align:center}
+.store_view_tabmenu > li.on > a, .store_view_tabmenu > li > a:hover{background-color:#2b2a28;color:#fff}
+.store_view_tabmenu > li.on > a:after, .store_view_tabmenu > li > a:hover:after{content:'';position:absolute;left:50%;bottom:-8px;width:14px;height:8px;margin-left:-7px;background-image:url('../img/store_view_arrow.png');background-repeat:no-repeat}
+.store_view_cont{position:relative;margin-top:20px}
+.store_view_cont01, .store_view_cont02{height:550px}

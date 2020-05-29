@@ -1,0 +1,38 @@
+/* NEW stote view */
+.store_view_video{width:1080px;margin-top:50px;background:#5c5c5c}
+.store_info_wrap{position:relative;width:100%;margin-top:50px}
+.store_info_wrap:after{display:block;content:"";clear:both}
+.store_info_left{width:508px}
+.store_tab_wrap{width:100%;margin:0 auto}
+.store_tabmenu{position:relative}
+.store_tabmenu:after{display:block;clear:both;content:""}
+.store_tabmenu > li{width:100%;height:50px}
+.store_tabmenu > li:first-child{margin-left:0}
+.store_tabmenu > li > a{display:block;width:100%;font-size:16px;color:#777;text-align:center;line-height:50px;letter-spacing:0.01em;background:#fff}
+.store_tabmenu > li.on > a, .store_tabmenu > li > a:hover{background:#333;color:#fff}
+
+.store_map01{width:508px;height:400px}
+
+.store_info_right{width:503px}
+.store_info_tit{margin-top:5px;font-size:26px;letter-spacing:-0.025em;color:#333}
+.store_line{display:inline-block;width:100%;height:1px;background:#d9d9d9;margin-top:15px}
+.store_info_ul{margin-top:62px}
+.store_info_ul li{overflow:hidden;height:72px;padding-left:95px;margin-top:55px}
+.store_info_ul li:first-child{margin-top:0}
+.store_info1{background: url('../img/store_info1.png') no-repeat 0 0}
+.store_info2{background: url('../img/store_info2.png') no-repeat 0 0}
+.store_info3{background: url('../img/store_info3.png') no-repeat 0 0}
+.store_info_txt01{margin-top:10px;font-size:20px;letter-spacing:-0.05em;color:#333}
+.store_info_txt02{margin-top:10px;font-size:16px;letter-spacing:-0.025em;color:#777}
+
+/*view_bot*/
+.view_bot{position:relative;width:1080px;height:80px;background-color:#e5e0dd;margin-top:40px}
+.view_bot > .slider-btns{display:block;position:relative;height:80px;text-align:center;line-height:80px;font-size:21px;letter-spacing:0.1em}
+.view_bot > .slider-prev{position:absolute;top:0;left:0;padding:0 30px;}
+.view_bot > .slider-list{position:absolute;top:0;left:50%;width:200px;height:80px;margin-left:-100px}
+.view_bot > .slider-next{position:absolute;top:0;right:0;padding:0 30px;}
+
+.store_view_img{position:relative;margin-top:30px;text-align:center;}
+.store_view_img > .slider-btns{position:absolute;top:50%;width:60px;height:60px;margin-top:-30px;background-repeat:no-repeat;text-indent:-10000px}
+.store_view_img > .slider-prev{left:30px;background-image:url('../img/btn_prev.png')}
+.store_view_img > .slider-next{right:30px;background-image:url('../img/btn_next.png')}

@@ -1,0 +1,80 @@
+<?php
+include_once('../inc/top.php');
+?>
+<style>
+@import url("../css/board.css");
+@import url("../board/view3_inquiry_00/css/skin.css");
+
+#boardWrap{padding-bottom:150px}
+.sub_content{padding-top:0}
+.layer1{padding-top:288px;padding-bottom:143px;border-bottom:1px solid rgba(0,0,0,0.1)}
+@media screen and (max-width: 1500px) {
+    .sub_content{padding-top:338px}
+    .layer1{padding-top:0}
+}
+.lyr1_video{position:relative;padding-top:31.25%;background-image:url('../img/page/fran/lyr1_video.jpg')}
+.lyr1_video:before{opacity:0.5;content:'';position:absolute;left:0;top:0;width:100%;height:100%;background:url('../img/page/fran/pattern.png')repeat center;z-index:10}
+.lyr1_video iframe{position:absolute;left:0;top:0;width:100%}
+.lyr1_logo{bottom:50px;right:50px;z-index:10}
+.layer1 .text_area{z-index:20}
+.layer1 .lyr1_ttl{margin-bottom:32px;font-family:'NotoSerifKR-Medium';font-size:50px;line-height:140%;letter-spacing:0.05em;color:#fff}
+.layer1 .lyr1_text{font-family:'NotoSerifKR-Medium';font-size:25px;letter-spacing:0.05em;color:#fff}
+.layer1 ul{padding-top:70px}
+.layer1 li{width:50%}
+.layer1 li p{float:left}
+.layer1 li .li_ttl{width:40px;padding-top:15px;border-top:3px solid #a38f6a;font-family:'NotoSerifKR-Medium';font-size:25px;letter-spacing:0.15em;color:#000;text-align:center}
+.layer1 li .li_text{padding-top:22px;margin-left:40px;font-size:17px;letter-spacing:0.05em;line-height:176%;color:#000}
+
+.inq_temp{height:1199px;background:url('../img/page/fran/inq_temp.jpg')no-repeat center}
+
+.inquiry .inq_ttl{padding:145px 0 65px;font-family:'NotoSerifKR-Medium';font-size:50px;letter-spacing:0.05em;color:#2d2d2d;text-align:center}
+</style>
+        <!-- layer1 start -->
+        <div class="layer1 over_h rel m_nav chapters" data-motion-offset="1">
+            <div class="lyr1_video bg">
+                <iframe src="//player.vimeo.com/video/394883468?quality=1080p&autopause=0&playsinline=1&autoplay=1&loop=1&background=1" allow="autoplay" width="100%" height="100%" frameborder="0" playsinline webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <div class="text_area v_mid t_center">
+                    <p class="lyr1_ttl el1_1">든든한<br>사업 동반자가 되겠습니다</p>
+                    <p class="lyr1_text el1_2">상무초밥과 함께 새로운 성공의 파트너가 되시길 기원합니다.</p>
+                </div>
+                <div class="lyr1_logo abs"><img src="<?=$root?>/img/page/fran/lyr1_logo.png" alt="상무"></div>
+            </div>
+            <div class="inner">
+                <ul class="fs_def">
+                    <li class="over_h">
+                        <p class="li_ttl">운<br>영<br>방<br>식</p>
+                        <p class="li_text">
+                            상무초밥은 본사와 가맹점주가 협업하여 운영하는 방식입니다.<br>
+							인력관리, 식자재, 매체 광고 등은 본사가 담당하며, 매장 운영은 <br>
+							점주가 하게 됩니다. 따라서 에스앤피프렌차이즈와 가맹점이 <br>
+							공동투자 운영방식으로 입점할 수 있습니다.
+                        </p>
+                    </li>
+                    <li class="over_h">
+                        <p class="li_ttl">입<br>점<br>상<br>담</p>
+                        <p class="li_text">
+                            에스앤피프렌차이즈는 국내 최고 초밥브랜드로서 여러분의 자산가치를<br>
+							극대화해드릴 것을 확신하며, 저희 에스앤피프렌차이즈와 비즈니스<br>
+							파트너로 함께 하고 싶으신 분은 아래 신청서를 작성해주시면<br>
+							개설 담당자가 상세하게 검토한 후에 회신 드리도록 하겠습니다.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- //layer1 end -->
+        <div class="inq_temp">
+
+        </div>
+<?php
+include_once('../inc/bottom.php');
+?>
+<script src="<?=$root?>/js/YMotion.js?<?=$time?>"></script>
+<script>
+new YMotion([
+    [
+        {el: '.el1_1', set: {opacity: 0, y: 50}, to: {opacity: 1, y: 0}, d: 0.5},
+        {el: '.el1_2', set: {opacity: 0, y: 50}, to: {opacity: 1, y: 0}, d: 0.5},
+    ],
+]).activate();
+</script>

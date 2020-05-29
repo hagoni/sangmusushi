@@ -1,0 +1,9 @@
+/* sns modal */
+#snsModalContainer{overflow:hidden;position:absolute;left:50%;top:0;z-index:1000;width:1180px;height:700px;margin-left:-590px;background-color:#fff}
+.sns_modal_wrap{overflow:hidden;position:relative;width:1084px;height:600px;margin:70px auto 0}
+#snsContent{overflow:hidden;position:relative;height:100%}
+#snsSpinner{position:absolute;left:50%;top:50%;margin:-55px 0 0 -15px}
+.sns_modal_btns{display:none;position:absolute;top:50%;z-index:10;margin-top:-30px}
+#snsModalPrev{left:0}
+#snsModalNext{right:0}
+#snsModalX{position:absolute;right:10px;top:10px;z-index:10}

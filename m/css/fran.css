@@ -1,0 +1,18 @@
+@import url('board.css');
+@import url('../board/view3_inquiry_00/css/skin.css');
+#boardWrap{margin-top:0;padding-top:0}
+
+.layer1{padding:22.8125vw 0 14.0625vw;border-bottom:1px solid rgba(0,0,0,0.1)}
+.layer1 .inner{height:90.625vw;background:url('../img/page/fran/lyr1_bg.jpg')no-repeat center;background-size:cover}
+.layer1 .lyr1_box{height:90.625vw;background-image:url('../img/page/fran/lyr1_bg.jpg')}
+.layer1 .stitle2{position:relative;display:inline-block;line-height:9.6875vw}
+.layer1 .stitle2:before{content:'';position:absolute;bottom:0;left:0;width:100%;height:0.625vw;background:#a38f6a}
+.layer1 .lyr1_ttl{padding-top:7.8125vw;padding-bottom:3.4375vw}
+.lyr1_video{position:absolute;left:0;top:0;width:100%;padding-top:100%}
+.lyr1_video iframe{position:absolute;left:0;top:0}
+.layer1 .img_title{left:0;top:0;width:100%;z-index:2}
+.pattern{position:absolute;left:0;top:0;width:100%;height:100%;background:url('../img/page/menu/lyr1_dot.png')repeat center;z-index:1}
+
+.inquiry{padding-bottom:12.5vw}
+.inquiry .lyrtitle{padding:15.625vw 0 6.25vw}
+.inq_temp{position:absolute;top:30vw;left:50%;margin-left:-45.3125vw;width:90.625vw}

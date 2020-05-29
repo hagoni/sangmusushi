@@ -1,0 +1,6 @@
+.board_list > li{max-height:200px}
+.board_list_thumb{overflow:hidden;position:relative;width:44%;max-height:200px}
+.board_list_text{width:54%}
+.board_list_text > p{margin-right:0}
+
+.tabmenu li a{width:180px}

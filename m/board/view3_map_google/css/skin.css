@@ -1,0 +1,71 @@
+/* 신규매장 */
+.new_store{overflow:hidden;padding:11.71875vw 0}
+.new_store > p{font-family:'NotoSansKR-Bold';font-size:7.03125vw;letter-spacing:-0.01em;color:#1c1c1c}
+.new_store_slide{position:relative;height:15.625vw;margin-top:5.46875vw}
+.new_store_slide .flow-slider{width:100%;height:100%;overflow:hidden}
+.new_store_slide li{float:left;margin-left:6.25vw}
+.new_store_slide a{display:block}
+.new_store_slide .img_area, .new_store_slide .txt_area{display:inline-block;vertical-align:middle}
+.new_store_slide .img_area{width:22.1875vw;height:15.625vw;background-repeat:no-repeat;background-position:center;background-size:cover}
+.new_store_slide .txt_area{max-width:30vw;padding-left:3.125vw;box-sizing:border-box}
+.new_store_slide .store_name{font-family:'NotoSansKR-Medium';font-size:3.4375vw;letter-spacing:-0.02em;color:#1c1c1c}
+.new_store_slide .store_open{margin-top:1.5625vw;font-size:3.125vw;letter-spacing:-0.02em;color:#1c1c1c}
+
+/* 지도검색 */
+.place_find_wrap{padding:6.25vw 0;background:#000}
+.place_find_wrap .cols{position:relative;height:10.9375vw}
+.place_find_wrap .cols.select{width:calc(50% - 1px);margin-bottom:2px}
+.place_find_wrap .cols.select_city{margin-right:2px}
+.cols.select button, .cols.input .place_name, .cols.input label{width:100%;height:100%;padding-left:15px;box-sizing:border-box;border:0;font-size:3.75vw;letter-spacing:-0.02em;text-align:left}
+.cols.select button{background:url('../img/sel_arr.png') no-repeat 90% 50%;background-size:7px;background-color:rgba(255,255,255,0.2);color:#fff}
+.local_list_wrap{display:none;position:absolute;left:0;top:10.9375vw;width:100%;height:200px;background:#fff;z-index:5;padding:10px 0}
+.local_list_wrap a{display:block;padding-left:15px;line-height:7vw;font-size:3.90625vw;letter-spacing:-0.02em;color:#000}
+.cols.input form, .cols.input fieldset{height:100%}
+.cols.input .place_name{padding-right:90px;color:#000;border-radius:0}
+.cols.input label{position:absolute;left:0;top:0;line-height:10.9375vw;color:#000}
+.cols.input .place_btn{position:absolute;right:0;top:0;width:10.9375vw;height:100%;background:url('../img/find_ico.png') no-repeat center;background-size:14px;border:0;font-size:0;line-height:0}
+.geo_locator{display:none;position:absolute;right:10px;bottom:20px;z-index:10;width:40px;height:40px;background:url('../img/btn_location.jpg') no-repeat;background-size:cover;border-radius:2px;box-shadow:rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;transition:box-shadow .2s;outline:none}
+.geo_locator:hover{box-shadow:rgba(0, 0, 0, 0.6) 0px 1px 6px -1px}
+/* 지도 */
+#placeLoadMap{height:78.125vw;background-color:#ccc}
+
+/* 매장 리스트 */
+.store_ul{margin:0 auto;padding-top:6.25vw}
+.store_ul > li{position:relative;min-height:24vw;padding:3.90625vw 4.6875vw;box-sizing:border-box;border:1px solid rgba(0,0,0,0.2);margin-bottom:3.125vw}
+.store_ul .store_name{padding-bottom:2vw;font-family:'NotoSansKR-Bold';font-size:3.90625vw;letter-spacing:-0.02em;color:#000}
+.store_ul .store_name span.new{display:inline-block;width:3.125vw;margin-left:1.5625vw;vertical-align:0.3125vw}
+.store_ul .store_addr, .store_ul .store_tel{width:57.8125vw;font-size:3.4375vw;letter-spacing:-0.03em;line-height:155%;color:#666}
+.store_ul a{display:block;position:absolute;right:4.6875vw;top:7.2vw;width:9.375vw}
+.store_ul a.store_info{right:15.625vw}
+.loc_links li{float:left;width:9.375vw;margin-left:0.78125vw}
+.event_link{display:block;padding:2.6563vw 2.3438vw;border:1px solid #e5e5e5;box-sizing:border-box;background:#f3f3f3}
+.event_link img{width:12.5vw}
+.event_link .evt_title{display:inline-block;vertical-align:middle;width:65vw;font-family:'NotoSansKR-Light';font-size:2.8125vw;letter-spacing:-0.03em;color:#282828}
+
+.place_modal{overflow:hidden;position:relative;width:140px}
+.place_title{position:relative;height:20px;margin:1px 0 0 2px;padding-left:10px;border-bottom:1px solid #ebebeb;font-weight:700;font-size:0.875em;line-height:20px;letter-spacing:-0.05em}
+.place_cont{position:relative;margin:1px 0 0 2px;padding:5px 10px 0;
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+.place_addr{font-size:0.875em;color:#888;line-height:120%;letter-spacing:-0.05em}
+.more_btn_wrap{display:block;position:relative;width:60px;height:18px;margin:5px auto 0;border-radius:2px;background-color:#2b2a28;font-size:0.75em;line-height:18px;letter-spacing:-0.05em;color:#fff;text-align:center}
+
+/* 매장 상세 팝업 */
+#locationPopBlock{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(55,55,55,0.7);z-index:1000}
+.location_view{left:3.9063%;top:0;z-index:1010;width:92.1875%;background:#fff}
+.loc_pop_title{height:12.5vw;padding:0 12.5vw 0 4.6875vw;background:#000;font-size:3.90625vw;letter-spacing:-0.02em;line-height:12.5vw;color:#fff}
+.loc_pop_title span.new{display:inline-block;width:3.125vw;margin-left:1.5625vw;vertical-align:0.3125vw}
+.view_close{position:absolute;right:0;top:0;width:12.5vw;height:12.5vw;background:url('../img/view_close.png') no-repeat center;background-size:3.90625vw;font-size:0;line-height:0}
+.location_info{padding:7.03125vw 4.6875vw}
+.location_info li{font-size:3.4375vw;letter-spacing:-0.02em;color:#000}
+.location_info li dt{font-family:'NotoSansKR-Medium';width:20%;line-height:182%}
+.location_info li dd{width:80%;color:#666;line-height:182%}
+.view_map_area{height:46.875vw;background:#ccc}
+.view_links li{float:left;width:50%;height:11.5vw;text-align:center}
+.view_links li:last-child{background:#fae100}
+.view_links a{display:block;line-height:11.5vw;font-family:'NotoSansKR-Light';font-size:3.125vw;letter-spacing:-0.03em;color:#282828}
+.view_link01{width:3.4378vw}
+.view_link02{width:5.5vw}

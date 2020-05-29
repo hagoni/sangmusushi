@@ -1,0 +1,486 @@
+<?
+function checkMobile() {
+    if(preg_match('/Android|BlackBerry|Blazer|Bolt|Doris|Dorothy|Fennec|GoBrowser|IEMobile|iPhone|iPod|Iris|Maemo|MIB|Minimo|NetFront|Opera Mini|Opera Mobi|SEMC-Browser|Skyfire|SymbianOS|TeaShark|Teleca|uZardWeb/', $_SERVER['HTTP_USER_AGENT']) > 0)  {
+        return true;
+    }
+}
+@session_start();
+$_SESSION['mobile'] = strpos($_SERVER['QUERY_STRING'], 'mobile') > -1 ? true : false;
+$protocol = $_SERVER['HTTPS'] == 'on' ? 'https://' : 'http://';
+$domain = str_replace('www.', '', $_SERVER['SERVER_NAME']);
+// $m_url = $protocol.'m.'.$domain;
+$m_url = $protocol.$domain.'/m';
+if(checkMobile() == true && $_SESSION['mobile'] != true) {
+	$_SERVER['QUERY_STRING'] ? header('Location: '.$m_url.'?'.$_SERVER['QUERY_STRING']) : header('Location: '.$m_url);
+	exit;
+}
+######################################################################################################################################################
+//VIEW3 BOARD 1.0
+######################################################################################################################################################
+define('_VIEW3BOARD_', TRUE);
+define('MAIN_TYPE',													'MAIN',TRUE);
+@include_once														"./view3.php";
+######################################################################################################################################################
+$html_idx = "12";//유저게시판
+######################################################################################################################################################
+$settings_sql = 'SELECT * FROM `'.TABLE_LEFT.'settings` WHERE `key`="info";';
+$settings_query = mysql_query($settings_sql);
+$settings_raw = mysql_fetch_assoc($settings_query);
+$settings_data = unserialize($settings_raw['val']);
+$sitename = htmlentities($settings_data['title'], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+$description = htmlentities($settings_data['desc'], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+$keywords = htmlentities($settings_data['keyword'], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+$canonical = htmlentities($settings_data['canonical'], ENT_QUOTES | ENT_IGNORE, "UTF-8");
+$site_uri = urlencode(PROTOCOL.$_SERVER[SERVER_NAME].$_SERVER[REQUEST_URI]);
+$og_image = $def_og_image;
+######################################################################################################################################################
+$request_root = $root;
+$time = time();
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="naver-site-verification" content="<?=htmlentities($settings_data['naver_webmastertools_key'], ENT_QUOTES | ENT_IGNORE, "UTF-8");?>">
+<meta name="description" content="<?=$description?>">
+<meta name="keywords" content="<?=$keywords?>">
+<meta name="author" content="">
+<meta property="og:title" content="<?=$sitename?>">
+<meta property="og:url" content="<?=$site_uri?>">
+<meta property="og:description" content="<?=$description?>">
+<meta property="og:type" content="website">
+<meta property="og:image" content="<?=$og_image?>">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="<?=$sitename?>">
+<meta name="twitter:url" content="<?=$site_uri?>">
+<meta name="twitter:description" content="<?=$description?>">
+<meta name="twitter:image" content="<?=$og_image?>">
+<meta name="viewport" content="width=1260">
+<title><?=$sitename?></title>
+<link rel="canonical" href="<?=$canonical?>">
+<link rel="shortcut icon" href="<?=$root?>/img/favicon.ico">
+<link rel="stylesheet" href="<?=$root?>/css/style.css?<?=$time?>">
+<link rel="stylesheet" href="<?=$root?>/css/main.css?<?=$time?>">
+<link rel="stylesheet" href="<?=$root?>/css/store.css?<?=$time?>">
+<link rel="stylesheet" href="<?=BOARD?>/view3_map_00/css/skin.css?<?=$time?>">
+</head>
+<body>
+
+<!-- 건너뛰기 링크 시작 -->
+<dl id="skiptoContent">
+	<dt>바로가기 메뉴</dt>
+	<dd><a href="#navigation" class="skip">네비게이션 바로가기</a></dd>
+	<dd><a href="#content" class="skip">본문 바로가기</a></dd>
+</dl>
+<!-- //건너뛰기 링크 끝 -->
+
+<!-- wrap start -->
+<div id="wrap" data-motion-offset="2">
+<?
+$pop_sql = "select * from ".TABLE_LEFT."popup_01 where view3_use = 1 and view3_check_09 = 3 order by view3_order desc, view3_write_day desc";
+$pop_res = mysql_query($pop_sql);
+$pop_num = mysql_num_rows($pop_res);
+if ($pop_num) {
+    while ($pop_lst = mysql_fetch_assoc($pop_res)) {
+        $pop_img = explode("||",$pop_lst['view3_file']);
+    ?>
+        <div class="popup" id="popupTop" style="background:url('<?=$root?>/upload/popup_01<?=$pop_img[0]?>') no-repeat center bottom;">
+            <a href="#none" class="close_x"><img src="<?=$root?>/img/main/popup_x.png" alt=""></a>
+        </div>
+        <div class="main_left"><img src="<?=$root?>/img/main/main_left.png" alt=""></div>
+    <?
+    }
+}
+?>
+
+
+<?php
+include_once('inc/header.php');
+?>
+	<div class="closed_store fs_def t_center geo_cont" style="display:none">
+		<p class="cs_text geo_tlt"><span>-</span>이 귀하와 가장 가까운 곳에 위치하고 있습니다.</p>
+		<a href="#none" class="bindContentsModalOpen2 cs_btns cs_store geo_link geo_tlt" data-notice-idx=""><span>-</span></a>
+		<a href="<?=$root?>/html/store.html#2" class="cs_btns cs_other">다른 매장</a>
+	</div>
+	<div class="container m_nav" id="content">
+		<!-- layer1 start -->
+		<div class="perspective-container perspective section rel">
+			<div class="perspective">
+				<div class="rotate-item">
+					<div class="layer1 layer">
+						<div class="lyr1_slide h100">
+							<div class="swiper-container h100">
+								<ul class="swiper-wrapper h100">
+									<li class="swiper-slide slide1 h100 bg"></li>
+									<li class="swiper-slide slide2 h100 bg"></li>
+									<li class="swiper-slide slide3 h100 bg"></li>
+									<li class="swiper-slide slide4 h100 bg"></li>
+									<li class="swiper-slide slide6 h100 bg"></li>
+									<li class="swiper-slide slide5 h100 bg"></li>
+								</ul>
+							</div>
+						</div>
+						<div class="v_mid t_center">
+							<p class="lyr_ttl">제대로 만든 초밥.<br>가까이 하다</p>
+							<p class="lyr_sttl">제대로된 초밥의 대중화를 선도하다.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //layer1 end -->
+		<!-- layer2 start -->
+		<div class="perspective-container perspective section rel">
+			<div class="perspective">
+				<div class="rotate-item">
+					<div class="layer2 layer bg">
+						<div class="v_mid t_center">
+							<p class="lyr_ttl">이상적 가심비.</p>
+							<p class="lyr_sttl">필수불가결한 선택의 이유를 만들다.</p>
+							<div class="lyr2_box" data-motion-offset="1">
+								<div class="box_in">
+									<ul class="fs_def">
+<?
+//$cnt_sql = "select * from ".TABLE_LEFT."count_01 where view3_use = 1";
+//$cnt_res = mysql_query($cnt_sql);
+//$cnt_lst = mysql_fetch_assoc($cnt_res);
+include(ROOT_INC.'/inc/get_sales.php');
+?>
+										<li class="li1">
+											<p class="num1 num"><span data-number="<?=$result['cnt_sushi'];?>">-</span><i>個</i></p>
+											<p class="num_text">영업시간 기준 실제 판매되는 초밥 판매량입니다.</p>
+										</li>
+										<li class="li2">
+											<p class="num2 num"><span data-number="<?=$result['cnt_takeaway'];?>">-</span></p>
+											<p class="num_text">포장 건수</p>
+										</li>
+										<li class="li3">
+											<p class="num3 num"><span data-number="<?=$result['cnt_delivery'];?>">-</span></p>
+											<p class="num_text">배달 건수</p>
+										</li>
+										<li class="li4">
+											<p class="num4 num"><span data-number="<?=$result['cnt_visitor'];?>">-</span></p>
+											<p class="num_text">매장 방문자 수</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //layer2 end -->
+		<!-- layer3 start -->
+		<div class="perspective-container perspective section rel">
+			<div class="perspective">
+				<div class="rotate-item">
+					<div class="layer3 layer h100">
+						<p class="lyr_ttl">올곧은 재료.<br>올바른 고집.</p>
+						<p class="lyr_sttl">쉐프가 제대로 만든 초밥을 즐기다.</p>
+						<div class="lyr3_slide h100">
+							<div class="swiper-container h100">
+								<ul class="swiper-wrapper h100">
+									<li class="swiper-slide slide1 h100 bg">
+										<p class="slide_text">전남 해남군 옥천면에서 계약재배된<br>'한눈에 반한 쌀'로 밥을 짓습니다.</p>
+									</li>
+									<li class="swiper-slide slide2 h100 bg">
+										<p class="slide_text">모든 매장의 쉐프는 본사 인력관리 시스템으로<br>관리를 하고 있어 안심하고 드실 수 있습니다.</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<ul class="lyr3_paging fs_def abs">
+							<li><a href="#none"><span class="progress-bar"></span>밥이 맛있는 초밥집</a></li>
+							<li><a href="#none"><span class="progress-bar"></span>전매장 쉐프 관리 시스템</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //layer3 end -->
+		<!-- layer4 start -->
+		<div class="perspective-container perspective section rel">
+			<div class="perspective">
+				<div class="rotate-item">
+					<div class="layer4 layer h100 bg">
+						<div class="v_mid t_center">
+							<p class="lyr4_ttl"><img src="<?=$root?>/img/main/lyr4_ttl.png" alt="5가지 약속"></p>
+							<p class="lyr_sttl">
+								건강하고 안전한 식재료만 쓰겠습니다.<br>
+								일본산 수산물은 죽어도 쓰지 않겠습니다.<br>
+								음식에 가격이상의 가치를 함께 담아내겠습니다.<br>
+								전국 최고의 초밥 브랜드가 되기위해 목숨걸고 노력하겠습니다.<br>
+								최상급 쌀로 밥을 짓겠습니다.
+							</p>
+							<div class="lyr4_logo"><img src="<?=$root?>/img/main/lyr4_logo.png" alt="상무"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //layer4 end -->
+		<!-- layer5 start -->
+		<div class="perspective-container perspective section rel">
+			<div class="perspective">
+				<div class="rotate-item">
+					<div class="layer5 layer h100 bg">
+						<div class="v_mid t_center">
+							<div class="lyr5_moto"><img src="<?=$root?>/img/main/lyr5_moto.png" alt=""></div>
+							<p class="lyr_ttl">고스란히 전하다.</p>
+							<p class="lyr_sttl">본연의 가치를 잃지 않는<br>무결의 Delivery Service.</p>
+							<ul class="fs_def">
+								<li>
+									<img src="<?=$root?>/img/main/lyr5_ttl1.png" alt="" class="m_r20">
+									<img src="<?=$root?>/img/main/lyr5_text1.png" alt="">
+								</li>
+								<li>
+									<img src="<?=$root?>/img/main/lyr5_ttl2.png" alt="" class="m_r20">
+									<img src="<?=$root?>/img/main/lyr5_text2.png" alt="">
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //layer5 end -->
+		<!-- menu start -->
+		<div class="menu center over_h">
+			<div class="menu_img1 l50"><img src="<?=$root?>/img/main/menu_left.jpg" alt=""></div>
+			<div class="menu_img2 l50"><img src="<?=$root?>/img/main/menu_right.jpg" alt=""></div>
+			<div class="menu_slide rel">
+				<div class="menu_bg l50"><img src="<?=$root?>/img/main/menu_sl_bg.jpg" alt=""></div>
+				<div class="menu_logo l50"><img src="<?=$root?>/img/main/menu_logo.png" alt="상무"></div>
+				<div class="swiper-container">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide rel">
+							<img src="<?=$root?>/img/main/menu_sl1.png" alt="">
+							<p class="sl_ttl l50">특<br>선<br>초<br>밥<br>세<br>트</p>
+						</li>
+						<li class="swiper-slide rel">
+							<img src="<?=$root?>/img/main/menu_sl2.png" alt="">
+							<p class="sl_ttl l50">모<br>듬<br>초<br>밥<br>세<br>트</p>
+						</li>
+						<li class="swiper-slide rel">
+							<img src="<?=$root?>/img/main/menu_sl3.png" alt="">
+							<p class="sl_ttl l50">특<br>모<br>듬<br>초<br>밥<br>세<br>트</p>
+						</li>
+					</ul>
+				</div>
+				<button type="button" class="menu_btns menu_prev">이전</button>
+				<button type="button" class="menu_btns menu_next">다음</button>
+			</div>
+            <div class="new_store inner over_h">
+                <p class="ns_ttl f_left"><img src="<?=$root?>/img/main/ns_ttl.png" alt="오픈준비중"></p>
+                <ul class="fs_def f_left">
+                    <li>천안신불당점<br>여수해양공원점</li>
+                    <li>울산점<br>부산점</li>
+					<li>창원점</li>
+                </ul>
+            </div>
+		</div>
+		<!-- //menu end -->
+
+		<!-- notice start -->
+		<div class="notice rel">
+			<div class="center over_h t_center" id="instargram">
+				<p class="lyr_ttl">지금 상무초밥은</p>
+				<ul class="notice_list fs_def iglyr_open">
+<?
+$count_num = (int)$_REQUEST['count_num'];
+if ($count_num < 6) {
+	$count_num = 6;
+}
+$sns_sql = "select * from ".TABLE_LEFT."instagram_01 where view3_use = 1 order by view3_order desc, view3_write_day desc LIMIT {$count_num}";
+$sns_res = mysql_query($sns_sql);
+while ($sns_lst = mysql_fetch_assoc($sns_res)) {
+	$sns_img = array_filter(explode("||",$sns_lst['view3_file']));
+    $current_img = $root.'/upload/instagram_01'.current($sns_img);
+    $last_img = $root.'/upload/instagram_01'.end($sns_img);
+?>
+					<li>
+						<!-- <a href="<?=$sns_lst['view3_link']?>" class="insta_open" target="_blank"> -->
+						<a href="<?=$sns_lst['view3_link']?>" target="_blank" class="iglyr_link" data-ig_img="<?=$last_img?>" data-ig_title="<?=$sns_lst['view3_title_01'];?>" data-ig_desc="<?=$sns_lst['view3_command_01'];?>">
+							<div class="img_area">
+								<img src="<?=$current_img?>" alt="">
+							</div>
+							<div class="text_area">
+								<p class="notice_ttl ellipsis"><?=$sns_lst['view3_title_01']?></p>
+								<p class="notice_text ellipsis"><?=$sns_lst['view3_command_01']?></p>
+							</div>
+						</a>
+					</li>
+<?
+}
+?>
+				</ul>
+				<a href="#none" class="more_btn" data-count="<?=$count_num+1?>" id="more_btn">더보기</a>
+			</div>
+		</div>
+		<!-- //notice end -->
+	</div>
+
+<?php
+include_once('inc/footer.php');
+include_once('inc/sitemap.php');
+?>
+</div>
+<!-- //wrap end -->
+
+<script>
+var CONST_REQUEST_ROOT = '<?=$request_root?>';
+var CONST_ROOT = '<?=$root?>';
+var CONST_SITENAME = '<?=str_replace(' ', '', $sitename)?>';
+</script>
+<script src="<?=$root?>/js/jquery-1.12.0.min.js"></script>
+<script src="<?=$root?>/freebest/inquiry.js"></script>
+<script src="<?=$root?>/js/common.js?<?=$time?>"></script>
+<script src="<?=$root?>/js/main.js?<?=$time?>"></script>
+<script src="<?=$root?>/js/ContentsModal.js?<?=$time?>"></script>
+<script src="<?=BOARD?>/view3_sns_00/js/SnsModal.js"></script>
+<?
+@include_once(BOARD_INC.'/view3_popup_01/list.php');
+@include_once(BOARD_INC.'/view3_popup_02/list.php');
+// @include_once(BOARD_INC.'/view3_popup_03/list.php');
+@include_once(BOARD_INC.'/view3_popup_04/list.php');
+?>
+<script>
+(function($) {
+	$(document).ready(function() {
+		function popupCallback() {
+			setTimeout(function() {
+
+			}, 400);
+		}
+		new Popup('type02', {
+			callback: popupCallback
+		});
+		new Popup('type03', {
+			callback: popupCallback
+		});
+		new Popup('type04', {
+			callback: popupCallback
+		});
+
+		$('body').on('click','#more_btn',function(){
+			var count = $(this).data('count');
+			$.post($(this).href,{count_num:(count+6)},function(res){
+				$('#instargram').html($(res).find('#instargram').html());
+			});
+		});
+
+		new SnsModal();
+	});
+}(jQuery));
+</script>
+<?
+@include_once(ROOT_INC.'/inc/geolocation.php');
+@include_once(ROOT_INC.'/statistics_include.php');
+?>
+
+<style>
+    .ig_layer{position:fixed;z-index:10000;left:0;top:0;width:100%;height:100%;overflow-x:hidden;overflow-y:auto;}
+    .ig_layer .img_bg{background-size:cover;background-position:center;background-repeat:no-repeat;}
+    .iglyr_bg{position:fixed;left:0;top:0;width:100%;height:100%;background-color:rgba(255,255,255,0.53);}
+    .iglyr_modal{position:relative;margin:0 auto;width:90%;max-width:600px;background:#FFFFFF;border:solid 1px #dadada;border-radius:4px;}
+    .iglyr_user{position:relative;height:64px;border-bottom:solid 1px #dadada;}
+    .iglyr_user .iglyr_user_img{display:inline-block;margin:12px 0 0 15px;width:40px;height:40px;background-color:#999;background-image:url("/img/modal/ig_sangmusushi.jpg");border:solid 1px #dadada;border-radius:40px;vertical-align:top;}
+    .iglyr_user .iglyr_user_name{display:inline-block;margin:12px 0 0 6px;height:40px;line-height:40px;vertical-align:top;}
+    .iglyr_user .iglyr_btn_close{position:absolute;right:15px;top:12px;width:40px;height:40px;background-image:url("/img/modal/modal_x.png");text-indent:-9999px;font-size:0;}
+    .iglyr_photo{position:relative;width:100%;height:0;padding-top:100%;background-color:#f7f7f7;background-size:contain;}
+    .iglyr_photo a{position:absolute;left:0;top:0;display:block;width:100%;height:100%;}
+    .iglyr_nav{position:absolute;top:0;left:0;width:100%;height:0;margin-top:34px;padding-top:50%;}
+    .iglyr_nav button{position:absolute;width:60px;height:60px;text-indent:-9999px;font-size:0;}
+    .iglyr_nav button.iglyr_prev{left:-61px;background-image:url("/img/modal/modal_prev.png");}
+    .iglyr_nav button.iglyr_next{right:-61px;background-image:url("/img/modal/modal_next.png");}
+    .iglyr_content{position:relative;height:85px;border-top:solid 1px #dadada;font-size:15px;font-family:'NotoSansKR-Light';}
+    .iglyr_cont_header{padding:10px;}
+    .iglyr_cont_header .iglyr_user_name{font-family:'NotoSansKR-Regular';font-weight:bold;}
+    .iglyr_cont_header .iglyr_cont_title{margin-left:5px;}
+    .iglyr_cont_body{padding:0 10px 10px;}
+</style>
+<div class="ig_layer" style="display:none">
+    <div class="iglyr_bg"></div>
+    <div class="iglyr_modal">
+        <div class="iglyr_nav">
+            <button type="button" class="iglyr_prev img_bg">이전</button>
+            <button type="button" class="iglyr_next img_bg">다음</button>
+        </div>
+        <div class="iglyr_user">
+            <a href="https://www.instagram.com/sangmusushi/" target="_blank"><div class="iglyr_user_img img_bg"></div></a>
+            <a href="https://www.instagram.com/sangmusushi/" target="_blank"><p class="iglyr_user_name">sangmusushi</p></a>
+            <button type="button" class="iglyr_btn_close img_bg">닫기</button>
+        </div>
+        <div class="iglyr_photo img_bg"><a href="https://www.instagram.com/sangmusushi/" class="feedLink" target="_blank"></a></div>
+        <div class="iglyr_content">
+            <a href="https://www.instagram.com/sangmusushi/" class="feedLink" target="_blank">
+                <p class="iglyr_cont_header"><span class="iglyr_user_name">sangmusushi</span><span class="iglyr_cont_title"></span></p>
+                <p class="iglyr_cont_body"></p>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+var ig_layer_clone = $('.ig_layer').clone();
+$('body').on('click','.iglyr_open a.iglyr_link',function(e){
+    e.preventDefault();
+    var wrap = $(this).closest('.iglyr_open');
+    var linkList = $('a.iglyr_link', wrap);
+    var layerWrap = ig_layer_clone.clone();
+    var bg = $('.iglyr_bg', layerWrap);
+    var modal = $('.iglyr_modal', layerWrap);
+    layerWrap.appendTo('body');
+    bg.fadeTo(0,0);
+    modal.css({marginTop:$(window).height()});
+    layerWrap.show();
+    //modal margin
+    var modal_margin = ($(window).height()-modal.height())/2;
+    if(modal_margin < 50 ){
+        modal_margin = 50;
+    }
+    modal.css({marginBottom:modal_margin});
+    //open Anim
+    bg.fadeTo(500,1);
+    modal.delay(100).animate({marginTop:modal_margin},{duration:450});
+    //open
+    var idx = 0;
+    function linkOpen(selected_link){
+        var ig_img = selected_link.attr('data-ig_img');
+        var ig_title = selected_link.attr('data-ig_title');
+        var ig_desc = selected_link.attr('data-ig_desc');
+        $('.iglyr_photo', layerWrap).attr({'style':"background-image:url("+ig_img+");"});
+        $('.iglyr_cont_title', layerWrap).text(ig_title);
+        $('.iglyr_cont_body', layerWrap).text(ig_desc);
+        $('.feedLink', layerWrap).attr('href', selected_link.attr('href'));
+        for(var i in linkList.get()){
+            if(selected_link[0]===linkList.eq(i)[0]){
+                idx = i*1;
+            }
+        }
+        if(idx > 0){
+            $('.iglyr_prev', layerWrap).show();
+        }else{
+            $('.iglyr_prev', layerWrap).hide();
+        }
+        if(idx+1 < linkList.length){
+            $('.iglyr_next', layerWrap).show();
+        }else{
+            $('.iglyr_next', layerWrap).hide();
+        }
+    }
+    $('.iglyr_prev', layerWrap).click(function(){
+        linkOpen(linkList.eq(idx-1));
+    });
+    $('.iglyr_next', layerWrap).click(function(){
+        linkOpen(linkList.eq(idx+1));
+    });
+    $('.iglyr_btn_close', layerWrap).click(function(){
+        layerWrap.remove();
+    });
+    linkOpen($(this));
+});
+</script>
+</body>
+</html>

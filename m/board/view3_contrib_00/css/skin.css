@@ -1,0 +1,41 @@
+
+.sub_content{}
+
+.layer1{padding-top:50.9375vw;padding-bottom:10.9375vw}
+
+.lyr1_video{position:relative;padding-top:31.25%;background-image:url("../img/contrib_bnr.png")}
+.lyr1_logo{bottom:50px;right:50px;z-index:10}
+.layer1 .text_area{z-index:20}
+.layer1 .lyr1_ttl1{margin-bottom:28px;font-family:'NotoSerifKR-Medium';font-size:50px;line-height:140%;letter-spacing:0.05em;color:#fff}
+.layer1 .lyr1_ttl2{margin-bottom:17px;font-family:'NotoSerifKR-Medium';font-size:25px;line-height:140%;letter-spacing:0.05em;color:#fff}
+.layer1 .lyr1_text{font-family:'NotoSerifKR-DemiLight';font-size:16px;line-height:30px;letter-spacing:0;color:#fff}
+
+
+
+.contrib_list li{width:48.275%;margin-left:3.45%;margin-bottom:5%}
+.contrib_list li:nth-child(2n-1){margin-left:0}
+.contrib_list .img_wrap{width:100%;padding-top:64%}
+.contrib_list .contrib_title{padding:21px 0 12px;font-family:'NotoSansKR-Medium';font-size:20px;letter-spacing:0.05em;color:#2d2d2d}
+.contrib_list .contrib_desc{font-size:17px;letter-spacing:0.05em;color:#2d2d2d}
+
+
+/* contents modal */
+#contentsModalContainer{overflow:hidden;position:absolute;left:50%;top:0;z-index:1000;width:1180px;height:800px;margin-left:-590px;background-color:#fff}
+#contentsModalWrap{overflow:hidden;position:relative;height:100%}
+#contentsContent{overflow:hidden;position:relative;width:1024px;margin:50px auto}
+#contentsSpinner{position:absolute;left:50%;top:50%;margin:-55px 0 0 -15px}
+.contents_modal_btns{display:none;position:absolute;top:50%;z-index:10;margin-top:-30px}
+#contentsModalPrev{left:0}
+#contentsModalNext{right:0}
+#contentsModalX{position:absolute;right:20px;top:10px;z-index:10}
+
+.place_modal{overflow:hidden;position:relative;width:226px}
+.place_title{position:relative;width:220px;height:34px;margin:1px 0 0 2px;padding-left:10px;border-bottom:1px solid #ebebeb;font-weight:700;font-size:14px;line-height:34px;letter-spacing:-0.05em}
+.place_cont{position:relative;margin:1px 0 0 2px;width:220px;padding:5px 10px;
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+.place_addr{font-size:14px;color:#888;line-height:150%;letter-spacing:-0.05em}
+.more_btn_wrap{display:block;position:relative;width:100px;height:24px;margin:5px auto 0;border-radius:4px;background-color:#2b2a28;line-height:24px;letter-spacing:-0.05em;font-size:14px;color:#fff;text-align:center}

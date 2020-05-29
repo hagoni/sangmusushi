@@ -1,0 +1,41 @@
+.main_left{position:fixed;left:0;bottom:50px;width:200px;text-align:center}
+@media screen and (max-width: 1800px) {
+    .main_left{width:100px}
+}
+@media screen and (max-width: 1500px) {
+    .main_left{display:none}
+    .m_nav{margin-left:30px;margin-right:30px}
+}
+
+.lnb_wrap{position:absolute;top:210px;left:0;width:100%;height:70px;z-index:200}
+.lnb_wrap.scroll{position:fixed;top:0;height:70px;background-color:rgba(230,233,236,0.95)}
+.lnb_wrap.scroll a{line-height:70px}
+.lnb_wrap .nav_logo{display:none;position:absolute;left:86px;top:13px;width:81px;height:44px;line-height:0}
+.lnb_wrap .nav_logo a{display:block;width:100%;height:100%;line-height:0}
+.lnb_wrap .btn_top{display:none;position:absolute;right:155px;top:29px;width:51px;height:13px;background:url('../img/main/btn_top.png')no-repeat center;font-size:0;z-index:1}
+.lnb_wrap .btn_stm{display:none;position:absolute;right:86px;top:22px;width:30px;height:26px;background:url('../img/common/btn_stm.png')no-repeat center;font-size:0;z-index:1}
+.lnb_wrap.scroll .nav_logo{display:block}
+.lnb_wrap.scroll .btn_top{display:block}
+.lnb_wrap.scroll .btn_stm{display:block}
+.lnb li{margin-left:30px}
+.lnb li:first-child{margin-left:0}
+.lnb li a{display:block;position:relative;padding:0 6px;font-family:'NotoSansKR-Medium';font-size:19px;line-height:226%;color:#2d2d2d}
+.lnb li.on a:before, .lnb li a:hover:before{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:#a38f6a}
+@media screen and (max-width: 1500px) {
+    .m_nav{margin-left:30px;margin-right:30px}
+    .lnb_wrap{top:260px}
+    .chapters.chapters1{top:302px}
+}
+
+/* tab_menu */
+.tabmenu{padding-bottom:50px;text-align:center}
+.tabmenu li{margin-left:5px}
+.tabmenu li:first-child{margin-left:0}
+.tabmenu li a{display:block;width:145px;height:60px;border:1px solid #d3d3d3;box-sizing:border-box;font-family:'NotoSansKR-Medium';font-size:20px;line-height:58px;letter-spacing:0.05em;color:#2d2d2d}
+.tabmenu li.on a{border-color:#a38f6a;background:#a38f6a;color:#fff}
+.tabmenu li:hover a{border-color:#a38f6a;background:#a38f6a;color:#fff}
+
+/* font */
+.text{font-family:'NotoSansKR-DemiLight';font-size:17px;line-height:176%;letter-spacing:0.05em;color:#2d2d2d}
+.stitle{font-family:'NotoSerifKR-Medium';font-size:25px;line-height:200%;letter-spacing:0.05em;color:#2d2d2d}
+.title{font-family:'NotoSerifKR-medium';font-size:50px;line-height:140%;letter-spacing:0.07em;color:#2d2d2d}

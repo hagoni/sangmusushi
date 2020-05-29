@@ -1,0 +1,10 @@
+.place_modal{overflow:hidden;position:relative;width:226px}
+.place_title{position:relative;width:220px;height:34px;margin:1px 0 0 2px;padding-left:10px;border-bottom:1px solid #ebebeb;font-weight:700;font-size:14px;line-height:34px;letter-spacing:-0.05em}
+.place_cont{position:relative;margin:1px 0 0 2px;width:220px;padding:5px 10px;
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+box-sizing:border-box;
+}
+.place_addr{font-size:14px;color:#888;line-height:150%;letter-spacing:-0.05em}
+.more_btn_wrap{display:block;position:relative;width:100px;height:24px;margin:5px auto 0;border-radius:4px;background-color:#2b2a28;line-height:24px;letter-spacing:-0.05em;font-size:14px;color:#fff;text-align:center}

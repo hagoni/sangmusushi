@@ -1,0 +1,78 @@
+#boardWrap{position:relative;width:92%;margin:6% auto;padding-top:50.9375vw}
+.nodata{margin-top:4%;padding:4% 0;border-top:1px solid #cdcdcd;border-bottom:1px solid #cdcdcd;font-size:0.75em;color:#666;text-align:center}
+.noimg, .noimg_sub{padding:10% 2%;background-color:#ededed;font-size:0.75em;color:#666;text-align:center}
+
+.b_bc_l{border-color:#ebebeb}
+.b_bc_m{border-color:#d9d9d9}
+.b_bc_h{border-color:#cdcdcd}
+.b_fs_xs{font-size:0.5em}
+.b_fs_s{font-size:0.625em}
+.b_fs_m{font-size:0.75em}
+.b_fs_l{font-size:0.875em}
+.b_fs_xl{font-size:1em}
+.b_fs_xxl{font-size:1.125em}
+.b_ff_l{font-family:'NotoSansKR-Light'}
+.b_ff_m{font-family:'NotoSansKR-DemiLight'}
+.b_ff_h{font-family:'NotoSansKR-Medium'}
+.b_lh_xs{line-height:100%}
+.b_lh_s{line-height:125%}
+.b_lh_m{line-height:150%}
+.b_lh_l{line-height:185%}
+.b_c_l{color:#7d7b7c}
+.b_c_m{color:#444}
+.b_c_h{color:#2b2a28}
+.b_btn01{display:block;width:65px;height:25px;margin:3% auto 0;background-color:#3e3e3e;font-size:0.8125em;line-height:25px;color:#fff;text-align:center}
+
+/* list page */
+.board_list > li{position:relative;padding:2%;border-bottom:1px solid #d9d9d9}
+.board_list > li > a, .board_list > li > div{display:block;position:relative;height:100%}
+.board_list > li > a:after, .board_list > li > div:after{content:'';display:block;clear:both}
+/* .board_list_thumb{float:left;width:20%}
+.board_list_thumb img{width:100%} */
+/* .board_list_text{float:left;width:76%;margin-left:4%} */
+.board_list_text img{height:12px}
+.board_list_title{margin-bottom:2%}
+.board_list_date, .board_list_hit{margin-top:2%;text-align:right}
+
+/* view page */
+.board_view_head{position:relative;height:40px;margin-bottom:2%;background-color:#f2f2f2}
+.board_view_title{margin:0 4%;line-height:40px}
+.board_view_sns{position:relative;margin:3% 4% 4% 0;font-size:0;text-align:right}
+.board_view_sns > li{display:inline-block;margin-left:10px}
+.board_view_sns > li:first-child{margin-left:0}
+.board_view_sns > li > a{display:block;width:20px}
+.board_view_body{margin:0 4%}
+.board_view_body img{display:block;max-width:100%;height:auto !important;margin:0 auto 2%}
+.board_view_file{margin-bottom:4%}
+.board_view_text p{line-height:inherit}
+.board_view_text img{height:auto !important}
+.board_view_text iframe{width:100%}
+
+/* list page paging */
+.paging{position:relative;padding:4% 0;font-size:0;text-align:center}
+.paging_prevnext{display:inline-block;width:24px;height:24px;background-repeat:no-repeat;background-position:center}
+.paging_prev{background-image:url('../img/board/paging_prev.png')}
+.paging_next{background-image:url('../img/board/paging_next.png')}
+.total_prev{background-image:url('../img/board/total_prev.png')}
+.total_next{background-image:url('../img/board/total_next.png')}
+.paging_ul{display:inline-block;position:relative;font-size:0;text-align:center;vertical-align:top}
+.paging_ul > li{display:inline-block;width:24px;height:24px}
+.paging_ul > li > a, .paging_ul > li > span{display:block;width:100%;height:100%;line-height:24px;text-align:center;font-size:0.75em;color:#767575}
+.paging_ul > li > span{border:1px solid #c7c7c7;line-height:22px;
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+-ms-box-sizing:border-box;
+-o-box-sizing:border-box;
+box-sizing:border-box;
+}
+
+/* view page btns */
+.view_btns_wrap{position:relative;height:40px;margin-top:4%;background-color:#f2f2f2;letter-spacing:0.2em;text-align:center}
+.list_prevnext{position:absolute;top:0;height:100%;font-weight:700;font-size:0.625em;line-height:40px}
+.list_prevnext:before{content:'';position:absolute;top:50%;width:12px;height:8px;margin-top:-4px;background-repeat:no-repeat;background-position:center;background-size:cover}
+.list_prev{left:2%;padding-left:18px}
+.list_prev:before{left:0;background-image:url('../img/board/btn_prev.png')}
+.list_next{right:2%;padding-right:18px}
+.list_next:before{right:0;background-image:url('../img/board/btn_next.png')}
+.list_return{display:block;position:relative;width:48px;height:40px;margin:0 auto;padding-left:12px;font-weight:700;font-size:0.625em;line-height:40px;letter-spacing:0.2em;text-align:center}
+.list_return:before{content:'';position:absolute;left:4px;top:50%;width:10px;height:8px;margin-top:-4px;background:url('../img/board/btn_list.png') no-repeat center;background-size:cover}

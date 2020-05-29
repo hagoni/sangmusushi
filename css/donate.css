@@ -1,0 +1,17 @@
+/* layer1 */
+.layer1{padding-top:290px}
+.layer1 .lyr1_box{height:500px;background-image:url('../img/page/donate/lyr1_bg.jpg')}
+.layer1 .lyr1_ttl{margin-bottom:18px;font-family:'NotoSerifKR-Medium';font-size:50px;line-height:140%;letter-spacing:0.05em;color:#fff}
+.layer1 .lyr1_sttl{font-family:'NotoSerifKR-Medium';font-size:25px;letter-spacing:0.05em;color:#fff}
+.layer1 .text{color:#fff}
+.layer1 .lyr1_logo{bottom:50px;right:50px;z-index:10}
+
+/* donate */
+.donate{padding-bottom:120px}
+.donate_list{padding-top:70px}
+.donate_list li{float:left;width:calc((100% - 101px) / 3);margin-right:50px;padding-bottom:80px}
+.donate_list li:nth-child(3n){margin-right:0}
+.donate_list .list_img{width:100%;padding-top:64%}
+.donate_list .list_ttl{padding:22px 0 6px;font-family:'NotoSansKR-Medium';font-size:20px;letter-spacing:0.05em;line-height:160%;color:#2d2d2d}
+.donate_list .list_text{font-size:17px;letter-spacing:0.05em;line-height:176%;color:#2d2d2d}
+.donate .more_view{display:inline-block;width:100px;border-bottom:2px solid #c08f6f;font-family:'NotoSerifKR-Medium';font-size:20px;letter-spacing:0.15em;line-height:250%;color:#2d2d2d}
